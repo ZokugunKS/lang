@@ -7,7 +7,7 @@
 
 [![Waffle.io](https://img.shields.io/badge/kanban-waffle.io-blue.svg)](https://waffle.io/ZokugunKS/lang)
 
-Provides basics methods for Array, Function, Number, Object and String
+Provide basics methods for Array, Function, Number, Object and String
 
 License
 -------

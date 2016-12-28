@@ -1,6 +1,6 @@
 {
 	"name": "@zokugun/lang",
-	"description": "Provides basics methods for Array, Function, Number, Object and String",
+	"description": "Provide basics methods for Array, Function, Number, Object and String",
 	"version": "0.1.0",
 	"author": {
 		"name": "Baptiste Augrain",
