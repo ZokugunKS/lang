@@ -1,0 +1,92 @@
+#![bin]
+
+extern {
+	describe:	func
+	it:			func
+}
+
+import {
+	expect 		from chai
+	*			from ../index.ks
+}
+
+describe('class', func() {
+	it('basics', func() { // {{{
+		class Greetings {
+			$create(message) {
+				this.message = message
+			}
+			greet(name) {
+				return this.message + '\nIt\'s nice to meet you, ' + name + '.'
+			}
+		}
+		
+		let hello = new Greetings('Hello world!')
+		
+		expect(hello.greet('miss White')).to.equal('Hello world!\nIt\'s nice to meet you, miss White.')
+	}) // }}}
+	
+	it('subtyping', func() { // {{{
+		class Shape {
+			private {
+				color: String
+			}
+			$create(@color)
+			draw() {
+				throw new Error('Not Implemented')
+			}
+		}
+		
+		class Rectangle extends Shape {
+			$create(color) {
+				super(color)
+			}
+			draw() {
+				return 'I\'m drawing a ' + this.color + ' rectangle.'
+			}
+		}
+		
+		let r = new Rectangle('black')
+		
+		expect(r.draw()).to.equal('I\'m drawing a black rectangle.')
+	}) // }}}
+	
+	it('subtyping :nocreate', func() { // {{{
+		class Shape {
+			private {
+				color: String
+			}
+			$create(@color)
+			draw() {
+				throw new Error('Not Implemented')
+			}
+		}
+		
+		class Rectangle extends Shape {
+			draw() {
+				return 'I\'m drawing a ' + this.color + ' rectangle.'
+			}
+		}
+		
+		let r = new Rectangle('black')
+		
+		expect(r.draw()).to.equal('I\'m drawing a black rectangle.')
+	}) // }}}
+	
+	it('static', func() { // {{{
+		class Shape {
+			static {
+				makeRectangle(color) => new Shape('rectangle', color)
+			}
+			$create(type, color) {
+				this.type = type
+				this.color = color
+			}
+		}
+		
+		let r = Shape.makeRectangle('black')
+		
+		expect(r.type).to.equal('rectangle')
+		expect(r.color).to.equal('black')
+	}) // }}}
+})

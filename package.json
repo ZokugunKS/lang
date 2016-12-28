@@ -1,0 +1,44 @@
+{
+	"name": "@zokugun/lang",
+	"description": "Provides basics methods for Array, Function, Number, Object and String",
+	"version": "0.1.0",
+	"author": {
+		"name": "Baptiste Augrain",
+		"email": "daiyam@zokugun.org"
+	},
+	"homepage": "https://github.com/zokugunks/lang",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zokugunks/lang"
+	},
+	"bugs": {
+		"url": "https://github.com/zokugunks/lang/issues"
+	},
+	"license": "MIT",
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"files": [
+		"src"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"chai": "2.x",
+		"kaoscript": "0.4.x",
+		"mocha": "2.x"
+	},
+	"scripts": {
+		"test": "node node_modules/.bin/mocha --colors --compilers ks:kaoscript/register --reporter spec"
+	},
+	"keywords": [
+		"kaoscript",
+		"array",
+		"function",
+		"number",
+		"object",
+		"string"
+	]
+}
