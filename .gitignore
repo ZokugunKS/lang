@@ -3,3 +3,5 @@ node_modules
 *.ksh
 *.ksm
 *.marks
+test/_test.js
+*.log

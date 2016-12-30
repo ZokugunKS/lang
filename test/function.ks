@@ -277,11 +277,11 @@ describe('function', func() {
 		}) // }}}
 		
 		it('toSource', func() { // {{{
-			let source = Type.isFunction:Function.toSource()
-			let uncover = Type.isFunction:Function.toSource().replace(/__cov_\$\w+_\w+\.\w\['\d+'\]\+\+/g, '')
+			let source = Type.isFunction:Function.toSource().replace(/[\t\r\n]/g, '')
+			let uncover = source.replace(/__cov_\$\w+_\w+\.\w\['\d+'\]\+\+/g, '')
 			
 			if(source.length == uncover.length) {
-				expect(uncover).to.equal('function (item) { // {{{\n\t\treturn typeof item === \'function\';\n\t}')
+				expect(uncover).to.equal('function (item) { // {{{return typeof item === \'function\';}')
 			}
 			else {
 				expect(uncover).to.equal('function (item){return typeof item===\'function\'}')
