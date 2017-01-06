@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"@kaoscript/webpack-loader": "0.2.x",
 		"chai": "2.x",
-		"kaoscript": "0.5.x",
+		"kaoscript": "0.6.x",
 		"karma": "1.x",
 		"karma-chrome-launcher": "2.x",
 		"karma-firefox-launcher": "1.x",
@@ -43,10 +43,11 @@
 		"webpack": "1.x"
 	},
 	"scripts": {
-		"test": "npm run test-mocha && npm run test-karma-ci",
+		"test": "npm run test-mocha && npm run test-karma-es5-ci && npm run test-karma-es6-ci",
 		"test-mocha": "mocha --colors --compilers ks:kaoscript/register --reporter spec",
 		"test-karma": "karma start",
-		"test-karma-ci": "karma start karma.conf-ci.js"
+		"test-karma-es5-ci": "karma start karma.conf-es5-ci.js",
+		"test-karma-es6-ci": "karma start karma.conf-es6-ci.js"
 	},
 	"keywords": [
 		"kaoscript",

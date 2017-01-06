@@ -281,10 +281,10 @@ describe('function', func() {
 			let uncover = source.replace(/__cov_\$\w+_\w+\.\w\['\d+'\]\+\+/g, '')
 			
 			if(source.length == uncover.length) {
-				expect(uncover).to.equal('function (item) { // {{{return typeof item === \'function\';}') // }}}
+				expect(uncover).to.equal('function(item) { // {{{return typeof item === \'function\';}') // }}}
 			}
 			else {
-				expect(uncover).to.equal('function (item){return typeof item===\'function\'}')
+				expect(uncover).to.equal('function(item){return typeof item===\'function\'}')
 			}
 		}) // }}}
 		

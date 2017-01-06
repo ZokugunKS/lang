@@ -1,6 +1,7 @@
 [@zokugun/lang](https://github.com/ZokugunKS/lang)
 =================================================================
 
+[![kaoscript](https://img.shields.io/badge/language-kaoscript-orange.svg)](https://github.com/kaoscript/kaoscript)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 ![Dependencies](https://img.shields.io/david/ZokugunKS/lang.svg)
 [![Build Status](https://travis-ci.org/ZokugunKS/lang.svg?branch=master)](https://travis-ci.org/ZokugunKS/lang)
@@ -14,7 +15,7 @@ Compatibility
 | ![Chrome][chrome]      | ![Edge][edge]          | ![Firefox][firefox]    | ![IE][ie]              | ![Safari][safari]      | ![Android][android]    | ![iOS][ios]               | ![Node.js][nodejs]        |
 |------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|---------------------------|---------------------------|
 | :heavy_check_mark: 55  | :heavy_check_mark: 14  | :heavy_check_mark: 50  | :x: 11                 | :heavy_check_mark: 10  | :grey_question: 6.0    | :heavy_check_mark: 10     | :heavy_check_mark: 6      |
-| :x: 45                 | :x: 13                 | :heavy_check_mark: 47  | :x: 9                  | :x: 9                  | :grey_question: 5.1    | :x: 9                     | :x: 4                     |
+| :heavy_check_mark: 45  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :x: 9                  | :heavy_check_mark: 9   | :grey_question: 5.1    | :heavy_check_mark: 9      | :heavy_check_mark: 4      |
 |                        |                        |                        |                        |                        | :grey_question: 4.4    | :x: 8                     |                           |
 
 License

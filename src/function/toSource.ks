@@ -15,7 +15,7 @@ impl Function {
 		{{:dokka.get('mocha', 'function instance toSource').code()}}
 	**/
 	toSource(): String {
-		let src = this.toString().replace(' anonymous', '')
+		let src = this.toString().replace(/^function \(/, 'function(')
 		
 		let regex = /^function\((?:([\r\n]*\/\*(?:[^*]|(?:\*+[^\*\/]))*\*+\/[\r\n]*)|[\w\s,])*\)/gim
 		let info
