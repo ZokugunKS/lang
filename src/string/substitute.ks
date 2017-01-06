@@ -14,7 +14,7 @@ impl String {
 		{{:dokka.get('mocha', 'string instance substitute :default').code()}}
 	**/
 	substitute(object, pattern = /\\?\{([^{}]+)\}/g): String {
-		return this.replace(pattern, (match, name) {
+		return this.replace(pattern, (match, name) => {
 			if match.charAt(0) == '\\' {
 				return match.slice(1)
 			}

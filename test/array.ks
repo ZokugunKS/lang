@@ -330,13 +330,13 @@ describe('array', func() {
 		
 		it('link', func() { // {{{
 			expect(['age', 21, 1950].link({
-				key: func(item) {
+				key(item) {
 					return item is String
 				},
-				value: func(item) {
+				value(item) {
 					return item is Number
 				},
-				year: func() {
+				year() {
 					return true
 				}
 			})).to.eql({

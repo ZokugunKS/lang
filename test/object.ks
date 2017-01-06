@@ -72,14 +72,15 @@ describe('object', func() {
 		
 		let o = new Person('White', 'miss')
 		
+		expect(o._name).to.equal('White')
+		expect(o._honorific).to.equal('miss')
+		
 		let c = Object.clone(o)
 		
 		expect(c == o).to.be.false
 		
-		expect(c).to.eql({
-			_name: 'White',
-			_honorific: 'miss'
-		})
+		expect(c._name).to.equal('White')
+		expect(c._honorific).to.equal('miss')
 	}) // }}}
 	
 	it('clone :instance', func() { // {{{

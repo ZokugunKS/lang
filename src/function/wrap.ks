@@ -14,6 +14,6 @@ impl Function {
 	wrap(...args): Function {
 		let self = this
 		
-		return (...newArgs) => self*$(this, ...args, ...newArgs)
+		return func(...newArgs) => self*$(this, ...args, ...newArgs)
 	}
 }
