@@ -5,11 +5,11 @@ module.exports = function(config) {
 	}
 	
 	const customLaunchers = {
-		sl_ie_11_w10: {
+		sl_ie_11_w8: {
 			base: 'SauceLabs',
 			browserName: 'internet explorer',
-			platform: 'Windows 10',
-			version: '11.103'
+			platform: 'Windows 8.1',
+			version: '11.0'
 		},
 	};
 	
@@ -18,7 +18,7 @@ module.exports = function(config) {
 		browsers: Object.keys(customLaunchers),
 		frameworks: [ 'mocha', 'chai' ],
 		files: [
-			'test/string.ks'
+			'test/decisions.ks'
 		],
 		plugins: [
 			'karma-sauce-launcher',
@@ -37,7 +37,7 @@ module.exports = function(config) {
 					loaders: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=es5'
+							loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
 						}
 					]
 				},

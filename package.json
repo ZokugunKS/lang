@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/lang",
 	"description": "Provide basics methods for Array, Function, Number, Object and String",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
@@ -27,9 +27,10 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@kaoscript/webpack-loader": "0.2.x",
+		"@kaoscript/target-commons": "0.1.x",
+		"@kaoscript/webpack-loader": "0.3.x",
 		"chai": "2.x",
-		"kaoscript": "0.6.x",
+		"kaoscript": "0.7.x",
 		"karma": "1.x",
 		"karma-chrome-launcher": "2.x",
 		"karma-firefox-launcher": "1.x",
@@ -43,11 +44,12 @@
 		"webpack": "1.x"
 	},
 	"scripts": {
-		"test": "npm run test-mocha && npm run test-karma-es5-ci && npm run test-karma-es6-ci",
+		"test": "npm run test-mocha && npm run test-karma-es5-ci && npm run test-karma-es6-ci && npm run test-karma-trident-ci",
 		"test-mocha": "mocha --colors --compilers ks:kaoscript/register --reporter spec",
 		"test-karma": "karma start",
 		"test-karma-es5-ci": "karma start karma.conf-es5-ci.js",
-		"test-karma-es6-ci": "karma start karma.conf-es6-ci.js"
+		"test-karma-es6-ci": "karma start karma.conf-es6-ci.js",
+		"test-karma-trident-ci": "karma start karma.conf-trident-ci.js"
 	},
 	"keywords": [
 		"kaoscript",

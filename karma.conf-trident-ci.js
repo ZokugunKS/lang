@@ -5,40 +5,39 @@ module.exports = function(config) {
 	}
 	
 	const customLaunchers = {
-		// Chrome
-		sl_chrome_45_w7: {
-			base: 'SauceLabs',
-			browserName: 'chrome',
-			platform: 'Windows 7',
-			version: '45.0'
-		},
-		sl_chrome_45_x11: {
-			base: 'SauceLabs',
-			browserName: 'chrome',
-			platform: 'OS X 10.11',
-			version: '45.0'
-		},
 		// Safari
-		sl_safari_9_x11: {
+		sl_safari_8_x10: {
 			base: 'SauceLabs',
 			browserName: 'safari',
-			platform: 'OS X 10.11',
+			platform: 'OS X 10.10',
+			version: '8.0'
+		},
+		// Internet Explorer
+		sl_ie_11_w10: {
+			base: 'SauceLabs',
+			browserName: 'internet explorer',
+			platform: 'Windows 10',
+			version: '11.103'
+		},
+		sl_ie_11_w8: {
+			base: 'SauceLabs',
+			browserName: 'internet explorer',
+			platform: 'Windows 8.1',
+			version: '11.0'
+		},
+		sl_ie_9_w7: {
+			base: 'SauceLabs',
+			browserName: 'internet explorer',
+			platform: 'Windows 7',
 			version: '9.0'
 		},
-		// Edge
-		sl_edge_13_w10: {
-			base: 'SauceLabs',
-			browserName: 'MicrosoftEdge',
-			platform: 'Windows 10',
-			version: '13.10586'
-		},
 		// iOS
-		sl_ios_9: {
+		sl_ios_8: {
 			base: 'SauceLabs',
 			browserName: 'iphone',
 			platform: 'OS X 10.11',
-			version: '9.3',
-			deviceName: 'iPhone 6S',
+			version: '8.4',
+			deviceName: 'iPhone 6',
 			deviceOrientation: 'portrait'
 		},
 	};
@@ -67,7 +66,7 @@ module.exports = function(config) {
 					loaders: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=ecma-v5'
+							loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
 						}
 					]
 				},

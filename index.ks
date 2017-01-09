@@ -1,6 +1,6 @@
 /**
  * index.ks
- * Version 0.1.0
+ * Version 0.2.0
  * November 12th, 2016
  *
  * Copyright (c) 2016 Baptiste Augrain
@@ -159,6 +159,7 @@ include once {
 	./src/string/contains
 	./src/string/dasherize
 	./src/string/drop
+	./src/string/endsWith
 	./src/string/escapeRegex
 	./src/string/evaluate
 	./src/string/extract
@@ -180,6 +181,7 @@ include once {
 	./src/string/rpad
 	./src/string/rtake
 	./src/string/rtrim
+	./src/string/startsWith
 	./src/string/substitute
 	./src/string/take
 	./src/string/test

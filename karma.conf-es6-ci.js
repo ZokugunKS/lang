@@ -92,7 +92,7 @@ module.exports = function(config) {
 					loaders: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=es6'
+							loader: '@kaoscript/webpack-loader?target=ecma-v6'
 						}
 					]
 				},

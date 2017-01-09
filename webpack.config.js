@@ -4,7 +4,7 @@ module.exports = [
 			loaders: [
 				{
 					test: /\.ks$/,
-					loader: '@kaoscript/webpack-loader?target=es5'
+					loader: '@kaoscript/webpack-loader?target=trident-v5'
 				}
 			]
 		},

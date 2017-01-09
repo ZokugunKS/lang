@@ -1,6 +1,5 @@
 include once {
-	../inc/string
-	
+	./startsWith
 	../object/values
 }
 
@@ -23,7 +22,7 @@ impl String {
 		{{:dokka.get('mocha', 'string instance evaluate').code()}}
 	**/
 	evaluate(context = null, hasReturn = false) {
-		let value = this.trim()
+		const value = this.trim()
 		
 		if value.startsWith('function') || value.startsWith('{') || context? {
 			if context is Object {
