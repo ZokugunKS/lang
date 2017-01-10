@@ -92,7 +92,7 @@ describe('function', func() {
 				expect(Date.now() - start).to.gte(20)
 				
 				done()
-			}).delay(20)
+			}).delay(50)
 		}) // }}}
 		
 		it('delay :wa', func(done) { // {{{
@@ -103,7 +103,7 @@ describe('function', func() {
 				expect(Date.now() - start).to.gte(20)
 				
 				done()
-			}).delay(20, null, 'foobar')
+			}).delay(50, null, 'foobar')
 		}) // }}}
 		
 		it('enclose', func() { // {{{
