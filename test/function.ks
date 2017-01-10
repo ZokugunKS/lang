@@ -219,13 +219,13 @@ describe('function', func() {
 				expect(count).to.be.equal(1)
 				
 				fn()
-			}, 10)
+			}, 50)
 			
 			setTimeout(func() {
 				expect(count).to.be.equal(2)
 				
 				done()
-			}, 30)
+			}, 100)
 		}) // }}}
 		
 		it('temporize :wa', func(done) { // {{{
@@ -243,13 +243,13 @@ describe('function', func() {
 				expect(count).to.be.equal(1)
 				
 				fn()
-			}, 10)
+			}, 50)
 			
 			setTimeout(func() {
 				expect(count).to.be.equal(2)
 				
 				done()
-			}, 30)
+			}, 100)
 		}) // }}}
 		
 		it('throttle', func(done) { // {{{
@@ -267,13 +267,13 @@ describe('function', func() {
 				fn()
 				expect(count).to.be.equal(2)
 				fn()
-			}, 10)
+			}, 50)
 			
 			setTimeout(func() {
 				expect(count).to.be.equal(2)
 				
 				done()
-			}, 20)
+			}, 100)
 		}) // }}}
 		
 		it('toSource', func() { // {{{
