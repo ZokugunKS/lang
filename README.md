@@ -15,8 +15,8 @@ Compatibility
 | ![Chrome][chrome]      | ![Edge][edge]          | ![Firefox][firefox]    | ![IE][ie]              | ![Safari][safari]      | ![Android][android]    | ![iOS][ios]               | ![Node.js][nodejs]        |
 |------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|---------------------------|---------------------------|
 | :heavy_check_mark: 55  | :heavy_check_mark: 14  | :heavy_check_mark: 50  | :heavy_check_mark: 11  | :heavy_check_mark: 10  | :grey_question: 6.0    | :heavy_check_mark: 10     | :heavy_check_mark: 6      |
-| :heavy_check_mark: 45  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :heavy_check_mark: 9   | :heavy_check_mark: 9   | :grey_question: 5.1    | :heavy_check_mark: 9      | :heavy_check_mark: 4      |
-|                        |                        |                        |                        |                        | :grey_question: 4.4    | :heavy_check_mark: 8      |                           |
+| :heavy_check_mark: 45  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :heavy_check_mark: 9   | :heavy_check_mark: 9   | :heavy_check_mark: 5.1 | :heavy_check_mark: 9      | :heavy_check_mark: 4      |
+|                        |                        |                        |                        |                        | :heavy_check_mark: 4.4 | :heavy_check_mark: 8      |                           |
 
 License
 -------

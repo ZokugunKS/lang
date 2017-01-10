@@ -40,6 +40,21 @@ module.exports = function(config) {
 			deviceName: 'iPhone 6',
 			deviceOrientation: 'portrait'
 		},
+		// Android
+		sl_android_51: {
+			base: 'SauceLabs',
+			browserName: 'Browser',
+			platform: 'Android',
+			version: '5.1',
+			deviceName: 'Android Emulator',
+		},
+		sl_android_44: {
+			base: 'SauceLabs',
+			browserName: 'Browser',
+			platform: 'Android',
+			version: '4.4',
+			deviceName: 'Android Emulator',
+		},
 	};
 	
 	config.set({
@@ -90,8 +105,8 @@ module.exports = function(config) {
 			testName: '@zokugun/lang',
 			recordScreenshots: false,
 			connectOptions: {
-				port: 5757,
-				logfile: 'sauce_connect.log'
+				'no-ssl-bump-domains': 'all',
+				port: 5757
 			},
 			public: 'public'
 		}

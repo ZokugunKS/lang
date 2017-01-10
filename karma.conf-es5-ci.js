@@ -91,8 +91,7 @@ module.exports = function(config) {
 			testName: '@zokugun/lang',
 			recordScreenshots: false,
 			connectOptions: {
-				port: 5757,
-				logfile: 'sauce_connect.log'
+				port: 5757
 			},
 			public: 'public'
 		}
