@@ -5,3 +5,4 @@ node_modules
 *.marks
 test/_test.js
 *.log
+coverage

@@ -1,8 +1,15 @@
 test:
 ifeq ($(g),)
-	node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec
+	./node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec
 else
-	node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec -g "$(g)"
+	./node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec -g "$(g)"
+endif
+
+coverage:
+ifeq ($(g),)
+	./node_modules/@zokugun/istanbul.cover/src/cli.js
+else
+	./node_modules/@zokugun/istanbul.cover/src/cli.js "$(g)"
 endif
 
 btest:
@@ -11,4 +18,4 @@ btest:
 clean:
 	find . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -delete
 
-.PHONY: test
+.PHONY: test coverage

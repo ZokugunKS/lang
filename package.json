@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/lang",
 	"description": "Provide basics methods for Array, Function, Number, Object and String",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
@@ -27,9 +27,13 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
+		"@kaoscript/coverage-istanbul": "0.1.x",
 		"@kaoscript/runtime": "0.5.x",
 		"@kaoscript/target-commons": "0.1.x",
 		"@kaoscript/webpack-loader": "0.3.x",
+		"@zokugun/istanbul.cover": "0.5.x",
+		"@zokugun/istanbul.cover.cmd.mocha": "0.4.x",
+		"@zokugun/istanbul.reporter.minimap": "0.5.x",
 		"chai": "2.x",
 		"kaoscript": "0.7.x",
 		"karma": "1.x",
@@ -46,6 +50,7 @@
 	},
 	"scripts": {
 		"test": "npm run test-mocha",
+		"test-coverage": "node node_modules/@zokugun/istanbul.cover/src/cli.js",
 		"test-mocha": "mocha --colors --compilers ks:kaoscript/register --reporter spec",
 		"test-karma-es5-ci": "karma start karma.conf-es5-ci.js",
 		"test-karma-es6-ci": "karma start karma.conf-es6-ci.js",
