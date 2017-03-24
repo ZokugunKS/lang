@@ -1,10 +1,5 @@
 include once ../inc/function
 
-extern {
-	clearTimeout
-	setTimeout
-}
-
 impl Function {
 	/**[md.zot]**api**
 	Execute the function only after *time* milliseconds and only it isn't called.

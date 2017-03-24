@@ -1,10 +1,9 @@
 include once {
 	../inc/array
+	../inc/json
 	
 	../toSource
 }
-
-extern JSON
 
 impl Array {
 	/**[md.zot]**api**

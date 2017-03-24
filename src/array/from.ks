@@ -13,7 +13,7 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array class from :def').code()}}
 	**/
-	static from(item?): Array {
+	static from(item = null): Array {
 		if !?item {
 			return []
 		}

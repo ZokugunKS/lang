@@ -1,7 +1,5 @@
 include once ../inc/function
 
-extern setTimeout
-
 impl Function {
 	/**[md.zot]**api**
 	Run the function asynchronously.
@@ -13,7 +11,7 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance async').code()}}
 	**/
-	async(bind?, ...args) {
+	async(bind = null, ...args) {
 		setTimeout(this^$(bind, ...args), 1)
 	}
 }

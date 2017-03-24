@@ -1,7 +1,5 @@
 include once ../inc/number
 
-extern isNaN
-
 impl Number {
 	/**[md.zot]**api**
 	Modulate the number.

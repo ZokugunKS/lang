@@ -12,5 +12,5 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance reject').code()}}
 	**/
-	reject(fn, bind?): Array => [value for value, index in this when value? && !fn*$(bind, value, index, this)]
+	reject(fn, bind = null): Array => [value for value, index in this when value? && !fn*$(bind, value, index, this)]
 }

@@ -12,7 +12,7 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance try').code()}}
 	**/
-	try(args?, bind?) {
+	try(args = null, bind = null) {
 		try {
 			return this*$(bind, ...args)
 		}

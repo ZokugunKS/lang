@@ -16,12 +16,12 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance memoize :wh').code()}}
 	**/
-	memoize(hasher?, bind?): Function {
+	memoize(hasher = null, bind = null): Function {
 		let self = this
 		
 		func memoize(...args) {
 			let cache = memoize.cache
-			let hash = hasher? ? hasher*$(null, ...args) : args[0]
+			let hash = hasher != null ? hasher*$(null, ...args) : args[0]
 			
 			if Object.hasKey(cache, hash) {
 				return cache[hash]

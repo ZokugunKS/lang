@@ -11,7 +11,7 @@ impl Number {
 	@example basics
 		{{:dokka.get('mocha', 'number instance repeat').code()}}
 	**/
-	repeat(fn: func, bind?) {
+	repeat(fn: func, bind = null) {
 		for i from 0 til this {
 			fn*$(bind, i, this)
 		}

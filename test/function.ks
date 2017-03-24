@@ -113,7 +113,7 @@ describe('function', func() {
 		}) // }}}
 		
 		it('filter', func() { // {{{
-			let f = ((prefix, name) => prefix + name).filter((prefix?, name?) => prefix? && name?)
+			let f = ((prefix, name) => prefix + name).filter((prefix = null, name = null) => prefix != null && name != null)
 			
 			expect(f('Hello ', 'White')).to.equal('Hello White')
 			

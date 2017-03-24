@@ -14,7 +14,7 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance throttle').code()}}
 	**/
-	throttle(time, bind?) {
+	throttle(time, bind = null) {
 		let self = this
 		let last = 0
 		

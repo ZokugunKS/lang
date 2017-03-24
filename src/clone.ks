@@ -14,7 +14,7 @@ Returns the clone of the given *value*.
 @example basics
 	{{:dokka.get('mocha', 'universal clone').code()}}
 **/
-export func clone(value?) { // {{{
+export func clone(value = null) { // {{{
 	if value == null {
 		return null 
 	}

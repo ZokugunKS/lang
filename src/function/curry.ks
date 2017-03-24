@@ -14,5 +14,5 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance curry').code()}}
 	**/
-	static curry(fn, args?, bind?): Function => (newArgs) => fn*$(bind, ...args, ...newArgs)
+	static curry(fn, args = null, bind = null): Function => (newArgs) => fn*$(bind, ...args, ...newArgs)
 }

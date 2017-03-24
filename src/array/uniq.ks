@@ -21,7 +21,7 @@ impl Array {
 	@example complex
 		{{:dokka.get('mocha', 'array instance uniq :true:fn').code()}}
 	**/
-	uniq(sorted = false, fn?, bind?): Array {
+	uniq(sorted = false, fn = null, bind = null): Array {
 		let result: Array = []
 		let value
 		

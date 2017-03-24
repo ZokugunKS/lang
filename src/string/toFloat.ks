@@ -1,6 +1,7 @@
-include once ../inc/string
-
-extern parseFloat
+include once {
+	../inc/number
+	../inc/string
+}
 
 impl String {
 	/**[md.zot]**api**

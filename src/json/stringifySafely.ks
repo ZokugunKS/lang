@@ -14,7 +14,7 @@ func $path(value, seen, keys) { // {{{
 	return '~' + path.join('.')
 } // }}}
 	
-func $replacer(replacer?, decycle?) { // {{{
+func $replacer(replacer = null, decycle = null) { // {{{
 	let seen = []
 	let keys = []
 	
@@ -71,5 +71,5 @@ impl JSON {
 	@example basics
 		{{:dokka.get('mocha', 'json stringifySafely :default').code()}}
 	**/
-	stringifySafely(item, replacer?, indent?, decycle?) => JSON.stringify(item, $replacer(replacer, decycle), indent)
+	stringifySafely(item, replacer = null, indent = null, decycle = null) => JSON.stringify(item, $replacer(replacer, decycle), indent)
 }

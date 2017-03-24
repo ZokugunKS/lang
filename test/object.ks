@@ -66,7 +66,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			static clone(value: Person) => new Person(value._name, value._honorific)
 		}
 		
@@ -89,7 +89,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			clone() => new Person(this._name, this._honorific)
 		}
 		
@@ -216,7 +216,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			static equals(itemA, itemB) => itemA._name == itemB._name && itemA._honorific == itemB._honorific
 		}
 		
@@ -229,7 +229,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			equals(item) => this._name == item._name && this._honorific == item._honorific
 		}
 		
@@ -242,7 +242,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			print() => this._honorific + ' ' + this._name
 		}
 		
@@ -255,9 +255,9 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(name, honorific?) {
+			constructor(name, honorific = null) {
 				this._name = name
-				this._honorific = honorific if honorific?
+				this._honorific = honorific if honorific != null
 			}
 		}
 		
@@ -270,7 +270,7 @@ describe('object', func() {
 				_honorific: String
 				_name: String
 			}
-			$create(@name, @honorific)
+			constructor(@name, @honorific)
 			print() => this._honorific + ' ' + this._name
 		}
 		

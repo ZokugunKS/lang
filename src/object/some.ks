@@ -18,7 +18,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object some').code()}}
 	**/
-	static some(item: Object, fn, bind?): Boolean {
+	static some(item: Object, fn, bind = null): Boolean {
 		for key of item {
 			if item.hasOwnProperty(key) && fn*$(bind, item[key], key) {
 				return true

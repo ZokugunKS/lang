@@ -1,6 +1,7 @@
-include once ../inc/array
-
-extern Math
+include once {
+	../inc/array
+	../inc/math
+}
 
 impl Array {
 	/**[md.zot]**api**

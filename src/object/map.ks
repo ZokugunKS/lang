@@ -14,7 +14,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object map').code()}}
 	**/
-	static map(item, fn, bind?): Object {
+	static map(item, fn, bind = null): Object {
 		let results = {}
 		
 		for key of item {

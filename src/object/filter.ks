@@ -14,7 +14,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object filter').code()}}
 	**/
-	static filter(item, fn, bind?): Object {
+	static filter(item, fn, bind = null): Object {
 		let results = {}
 		let value
 		

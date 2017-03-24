@@ -12,7 +12,7 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance filter').code()}}
 	**/
-	filter(fn, bind?): Function {
+	filter(fn, bind = null): Function {
 		let self = this
 		
 		return func(...args) {

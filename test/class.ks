@@ -13,7 +13,7 @@ import {
 describe('class', func() {
 	it('basics', func() { // {{{
 		class Greetings {
-			$create(message) {
+			constructor(message) {
 				this.message = message
 			}
 			greet(name) {
@@ -31,14 +31,14 @@ describe('class', func() {
 			private {
 				color: String
 			}
-			$create(@color)
+			constructor(@color)
 			draw() {
 				throw new Error('Not Implemented')
 			}
 		}
 		
 		class Rectangle extends Shape {
-			$create(color) {
+			constructor(color) {
 				super(color)
 			}
 			draw() {
@@ -56,7 +56,7 @@ describe('class', func() {
 			private {
 				color: String
 			}
-			$create(@color)
+			constructor(@color)
 			draw() {
 				throw new Error('Not Implemented')
 			}
@@ -78,7 +78,7 @@ describe('class', func() {
 			static {
 				makeRectangle(color) => new Shape('rectangle', color)
 			}
-			$create(type, color) {
+			constructor(type, color) {
 				this.type = type
 				this.color = color
 			}

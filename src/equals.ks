@@ -16,9 +16,19 @@ Returns *true* if *one* is softly equals to *two*, *false* if it's not.
 	{{:dokka.get('mocha', 'universal equals').code()}}
 **/
 export func equals(itemA?, itemB?) { // {{{
-	return true if itemA == itemB
-	return false if itemA == null || itemB == null
-	return itemA:Array.equals(itemB) if itemA is Array
-	return Object.equals(itemA, itemB) if itemA is Object
-	return false
+	if itemA == itemB {
+		return true
+	}
+	else if itemA == null || itemB == null {
+		return false
+	}
+	else if itemA is Array {
+		return itemA:Array.equals(itemB)
+	}
+	else if itemA is Object {
+		return Object.equals(itemA, itemB)
+	}
+	else {
+		return false
+	}
 } // }}}

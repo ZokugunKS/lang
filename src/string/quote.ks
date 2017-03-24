@@ -38,7 +38,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string class quote').code()}}
 	**/
-	static quote(value: String, quote?, escape?) {
+	static quote(value: String, quote = null, escape = null) {
 		return value.quote(quote, escape)
 	}
 }

@@ -13,7 +13,7 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance temporize :na').code()}}
 	**/
-	temporize(time, bind?, ...args): Function {
+	temporize(time, bind = null, ...args): Function {
 		let self = this
 		
 		return func() {

@@ -13,7 +13,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object each').code()}}
 	**/
-	static each(item, fn, bind?) {
+	static each(item, fn, bind = null) {
 		for key of item {
 			if item.hasOwnProperty(key) {
 				fn*$(bind, item[key], key, item)

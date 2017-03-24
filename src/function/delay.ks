@@ -1,7 +1,5 @@
 include once ../inc/function
 
-extern setTimeout
-
 impl Function {
 	/**[md.zot]**api**
 	Delay the execution of the function by *time* milliseconds.
@@ -15,5 +13,5 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance delay :na').code()}}
 	**/
-	delay(time, bind?, ...args) => setTimeout(this^$(bind, ...args), time)
+	delay(time, bind = null, ...args) => setTimeout(this^$(bind, ...args), time)
 }

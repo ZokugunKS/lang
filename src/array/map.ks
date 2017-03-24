@@ -12,7 +12,7 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance map').code()}}
 	**/
-	map(fn, bind?): Array {
+	map(fn, bind = null): Array {
 		let results = new Array(this.length)
 		
 		for item, index in this {

@@ -12,7 +12,7 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance each').code()}}
 	**/
-	each(fn, bind?): Array {
+	each(fn, bind = null): Array {
 		this.forEach(fn, bind)
 		
 		return this

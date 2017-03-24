@@ -48,7 +48,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string class unquote').code()}}
 	**/
-	static unquote(value: String, quote?, escape?) {
+	static unquote(value: String, quote = null, escape = null) {
 		return value.unquote(quote, escape)
 	}
 }

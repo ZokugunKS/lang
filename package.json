@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/lang",
 	"description": "Provide basics methods for Array, Function, Number, Object and String",
-	"version": "0.2.2",
+	"version": "0.3.0",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
@@ -35,7 +35,7 @@
 		"@zokugun/istanbul.cover.cmd.mocha": "0.4.x",
 		"@zokugun/istanbul.reporter.minimap": "0.5.x",
 		"chai": "2.x",
-		"kaoscript": "0.7.x",
+		"kaoscript": "0.8.x",
 		"karma": "1.x",
 		"karma-chrome-launcher": "2.x",
 		"karma-firefox-launcher": "1.x",

@@ -12,7 +12,7 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance group').code()}}
 	**/
-	group(fn, bind?): Object {
+	group(fn, bind = null): Object {
 		let result = {}
 		
 		let key

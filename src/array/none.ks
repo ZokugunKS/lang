@@ -12,7 +12,7 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance none').code()}}
 	**/
-	none(fn, bind?): Boolean {
+	none(fn, bind = null): Boolean {
 		for item, i in this {
 			return false if fn*$(bind, item, i, this)
 		}

@@ -14,7 +14,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object every').code()}}
 	**/
-	static every(item, fn, bind?): Boolean {
+	static every(item, fn, bind = null): Boolean {
 		for key of item {
 			if item.hasOwnProperty(key) && !fn*$(bind, item[key], key) {
 				return false

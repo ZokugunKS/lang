@@ -1,7 +1,5 @@
 include once ../inc/function
 
-extern setInterval
-
 impl Function {
 	/**[md.zot]**api**
 	Execute the function every *time* milliseconds
@@ -15,5 +13,5 @@ impl Function {
 	@example basics
 		{{:dokka.get('mocha', 'function instance periodical :na').code()}}
 	**/
-	periodical(time, bind?, ...args): Number => setInterval(this^$(bind, ...args), time)
+	periodical(time, bind = null, ...args): Number => setInterval(this^$(bind, ...args), time)
 }
