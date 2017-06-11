@@ -1,7 +1,7 @@
 include once {
-	../inc/function
+	'../inc/function'
 	
-	../object/hasKey
+	'../object/hasKey'
 }
 
 impl Function {

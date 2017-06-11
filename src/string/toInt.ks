@@ -1,6 +1,6 @@
 include once {
-	../inc/number
-	../inc/string
+	'../inc/number'
+	'../inc/string'
 }
 
 impl String {

@@ -6,8 +6,8 @@ extern {
 }
 
 import {
-	expect 		from chai
-	*			from ../index.ks
+	expect 		from 'chai'
+	*			from '../index.ks'
 }
 describe('universal', func() {
 	it('clone', func() { // {{{

@@ -1,8 +1,8 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./contains
-	./clear
+	'./contains'
+	'./clear'
 }
 
 impl Array {

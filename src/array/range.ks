@@ -1,6 +1,6 @@
 include once {
-	../inc/array
-	../inc/math
+	'../inc/array'
+	'../inc/math'
 }
 
 impl Array {

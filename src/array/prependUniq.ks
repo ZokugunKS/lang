@@ -1,11 +1,11 @@
-include once ./unshiftUniq
+include once './unshiftUniq'
 
 impl Array {
 	/**[md.zot]**api**
 	Add all the values of the given array only if they aren't contained in the array.
 	
 	@function prependUniq
-	@param	{array}		...		The array to prepend
+	@param	{array}		'...		The array to prepend'
 	@return {this}
 	
 	@example basics

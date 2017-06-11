@@ -1,6 +1,6 @@
 include once {
-	./startsWith
-	../object/values
+	'./startsWith'
+	'../object/values'
 }
 
 extern eval

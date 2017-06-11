@@ -1,4 +1,4 @@
-require|extern sealed JSON: {
+require|extern sealed namespace JSON {
 }
 
 export JSON

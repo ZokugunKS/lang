@@ -1,4 +1,4 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**
@@ -6,7 +6,7 @@ impl Array {
 	
 	@function insertAt
 	@param	{number}	index	The index to insert at
-	@param	{any}		...		The value to insert
+	@param	{any}		'...		The value to insert'
 	@return {this}
 	
 	@example basics

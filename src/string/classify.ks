@@ -1,4 +1,4 @@
-include once ./capitalizeWords
+include once './capitalizeWords'
 
 impl String {
 	/**[md.zot]**api**

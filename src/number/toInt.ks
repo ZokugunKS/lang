@@ -1,4 +1,4 @@
-include once ../inc/number
+include once '../inc/number'
 
 impl Number {
 	/**[md.zot]**api**

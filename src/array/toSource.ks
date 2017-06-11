@@ -1,8 +1,8 @@
 include once {
-	../inc/array
-	../inc/json
+	'../inc/array'
+	'../inc/json'
 	
-	../toSource
+	'../toSource'
 }
 
 impl Array {

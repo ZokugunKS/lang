@@ -1,4 +1,4 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**

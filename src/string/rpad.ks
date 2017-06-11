@@ -1,7 +1,7 @@
 include once {
-	../inc/string
+	'../inc/string'
 	
-	./repeat
+	'./repeat'
 }
 
 impl String {

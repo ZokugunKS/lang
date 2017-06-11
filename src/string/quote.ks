@@ -1,4 +1,4 @@
-include once ../inc/string
+include once './replaceAll'
 
 impl String {
 	/**[md.zot]**api**
@@ -12,7 +12,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance quote :default').code()}}
 	**/
-	quote(quote = '"', escape = ''): String {
+	quote(quote: String = '"', escape: String = ''): String {
 		let last = this.length - 1
 		
 		if this[0] == quote && this[last] == quote {
@@ -38,7 +38,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string class quote').code()}}
 	**/
-	static quote(value: String, quote = null, escape = null) {
+	static quote(value: String, quote = null, escape = null): String {
 		return value.quote(quote, escape)
 	}
 }

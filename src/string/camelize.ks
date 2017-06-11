@@ -1,4 +1,4 @@
-include once ./lowerFirst
+include once './lowerFirst'
 
 impl String {
 	/**[md.zot]**api**

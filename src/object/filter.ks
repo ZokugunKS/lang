@@ -1,4 +1,4 @@
-include once ../inc/object
+include once '../inc/object'
 
 impl Object {
 	/**[md.zot]**api**

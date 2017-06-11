@@ -1,4 +1,4 @@
-include once ../inc/string
+include once '../inc/string'
 
 #[cc(any(trident, all(safari, target_version='8')))]
 impl String {

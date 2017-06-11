@@ -7,8 +7,8 @@ extern {
 }
 
 import {
-	expect 		from chai
-	*			from ../index.ks
+	expect 		from 'chai'
+	*			from '../index.ks'
 }
 
 describe('decisions', func() {

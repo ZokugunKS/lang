@@ -1,7 +1,7 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./from
+	'./from'
 }
 
 impl Array {
@@ -9,7 +9,7 @@ impl Array {
 	Erase all the values of the array except the values of the give array
 	
 	@function retain
-	@param	{array}		...		The list of values to retain
+	@param	{array}		'...		The list of values to retain'
 	@return {this}
 	
 	@example basics

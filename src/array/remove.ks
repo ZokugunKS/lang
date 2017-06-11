@@ -1,4 +1,4 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**
@@ -6,7 +6,7 @@ impl Array {
 	
 	@class Array
 	@function remove
-	@param	{any}	...		The value to remove
+	@param	{any}	'...		The value to remove'
 	@return {this}
 	
 	@example basics

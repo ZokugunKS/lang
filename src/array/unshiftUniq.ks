@@ -1,8 +1,8 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./contains
-	./from
+	'./contains'
+	'./from'
 }
 
 impl Array {
@@ -11,7 +11,7 @@ impl Array {
 	
 	@class Array
 	@function unshiftUniq
-	@param	{any}	...		The value to add
+	@param	{any}	'...		The value to add'
 	@return {this}
 	
 	@example basics

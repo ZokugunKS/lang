@@ -1,7 +1,7 @@
 include once {
-	../inc/object
+	'../inc/object'
 	
-	../toSource
+	'../toSource'
 }
 
 impl Object {

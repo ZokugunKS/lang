@@ -1,5 +1,5 @@
 require|extern sealed class Object {
-	static keys(): Array<String>
+	static keys(obj): Array<String>
 }
 
 export Object

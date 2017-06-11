@@ -1,11 +1,11 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**
 	Returns the intersection between the current array and the given arrays
 	
 	@function intersection
-	@param	{array}	...	The arrays to intersect
+	@param	{array}	'...	The arrays to intersect'
 	@return	{array}
 	
 	@example basics

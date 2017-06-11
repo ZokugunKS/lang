@@ -1,6 +1,6 @@
 include once {
-	../inc/function
-	../inc/date
+	'../inc/function'
+	'../inc/date'
 }
 
 impl Function {

@@ -10,7 +10,7 @@ dependencies:
 
 test:
   override:
-    - npm run test-mocha
+    - npm run push-coverage
     - npm run test-karma-es5-ci
     - npm run test-karma-es6-ci
     - npm run test-karma-trident-ci

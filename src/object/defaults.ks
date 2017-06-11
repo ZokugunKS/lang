@@ -1,4 +1,4 @@
-include once ./merge
+include once './merge'
 
 impl Object {
 	/**[md.zot]**api**

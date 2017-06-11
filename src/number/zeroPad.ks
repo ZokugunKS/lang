@@ -1,8 +1,8 @@
 include once {
-	../inc/number
+	'../inc/number'
 	
-	../string/lpad
-	../string/rpad
+	'../string/lpad'
+	'../string/rpad'
 }
 
 impl Number {

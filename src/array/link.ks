@@ -1,7 +1,7 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	../object/clone
+	'../object/clone'
 }
 
 impl Array {

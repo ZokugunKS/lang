@@ -16,6 +16,6 @@ btest:
 	./node_modules/.bin/webpack -c test/string.ks test/_test.js
 
 clean:
-	find . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -delete
+	find -L . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -exec rm {} \;
 
 .PHONY: test coverage

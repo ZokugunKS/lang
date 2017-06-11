@@ -1,4 +1,4 @@
-include once ./contains
+include once './contains'
 
 impl Array {
 	/**[md.zot]**api**
@@ -6,7 +6,7 @@ impl Array {
 	
 	@class Array
 	@function pushUniq
-	@param	{any}	...		The value to add
+	@param	{any}	'...		The value to add'
 	@return {this}
 	
 	@example basics

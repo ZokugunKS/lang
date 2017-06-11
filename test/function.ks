@@ -1,15 +1,17 @@
 #![bin]
 
 extern {
+	sealed class Error
+	
 	describe:	func
 	it:			func
 	setTimeout:	func
 }
 
 import {
-	Type		from @kaoscript/runtime
-	expect 		from chai
-	*			from ../index.ks
+	Type		from '@kaoscript/runtime'
+	expect 		from 'chai'
+	*			from '../index.ks'
 }
 
 describe('function', func() {

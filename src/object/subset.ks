@@ -1,7 +1,7 @@
 include once {
-	../inc/object
+	'../inc/object'
 	
-	../array/intersection
+	'../array/intersection'
 }
 
 impl Object {

@@ -1,6 +1,6 @@
 include once {
-	../string/escapeRegex
-	../array/from
+	'../string/escapeRegex'
+	'../array/from'
 }
 
 impl String {

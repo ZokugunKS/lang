@@ -6,8 +6,8 @@ extern {
 }
 
 import {
-	expect 		from chai
-	*			from ../index.ks
+	expect 		from 'chai'
+	*			from '../index.ks'
 }
 
 describe('array', func() {
@@ -65,7 +65,7 @@ describe('array', func() {
 		}) // }}}
 		
 		it('compact', func() { // {{{
-			expect([1, null, 2, null, 3, ].compact()).to.eql([1, 2, 3])
+			expect([1, null, 2, null, 3].compact()).to.eql([1, 2, 3])
 		}) // }}}
 		
 		it('contains', func() { // {{{

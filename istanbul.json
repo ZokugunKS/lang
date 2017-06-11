@@ -2,7 +2,8 @@
 	"reporting": {
 		"print": "summary",
 		"reports": [
-			"minimap:@zokugun/istanbul.reporter.minimap"
+			"minimap:@zokugun/istanbul.reporter.minimap",
+			"lcovonly"
 		],
 		"watermarks": {
 			"statements":	[95, 100],

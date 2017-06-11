@@ -1,13 +1,16 @@
 #![bin]
+#![error(ignore(Error))]
 
 extern {
+	sealed class Error
+	
 	describe:	func
 	it:			func
 }
 
 import {
-	expect 		from chai
-	*			from ../index.ks
+	expect 		from 'chai'
+	*			from '../index.ks'
 }
 
 describe('class', func() {

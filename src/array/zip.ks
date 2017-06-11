@@ -1,7 +1,7 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./unzip
+	'./unzip'
 }
 
 impl Array {
@@ -9,7 +9,7 @@ impl Array {
 	Merges together the values of each of the arrays with the values at the corresponding position.
 	
 	@function zip
-	@param	{array}		...		The arrays
+	@param	{array}		'...		The arrays'
 	@return {array}
 	@static
 	

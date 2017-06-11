@@ -1,7 +1,7 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./pluck
+	'./pluck'
 }
 
 impl Array {

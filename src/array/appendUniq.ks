@@ -1,8 +1,8 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./from
-	./pushUniq
+	'./from'
+	'./pushUniq'
 }
 
 impl Array {
@@ -11,7 +11,7 @@ impl Array {
 	
 	@class Array
 	@function appendUniq
-	@param	{array}		...		The array to append
+	@param	{array}		'...		The array to append'
 	@return {this}
 	
 	@example basics

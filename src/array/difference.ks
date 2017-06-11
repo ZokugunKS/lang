@@ -1,11 +1,11 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**
 	Returns the difference between the current array and the given arrays
 	
 	@function difference
-	@param	{array}	...	The arrays onto to make the difference
+	@param	{array}	'...	The arrays onto to make the difference'
 	@return	{array}
 	**/
 	difference(...args): Array {

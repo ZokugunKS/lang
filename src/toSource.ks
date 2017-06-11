@@ -1,9 +1,9 @@
 include once {
-	./array/toSource
-	./function/toSource
-	./object/toSource
+	'./array/toSource'
+	'./function/toSource'
+	'./object/toSource'
 	
-	./string/replaceAll
+	'./string/replaceAll'
 }
 
 /**[md.zot]**api**

@@ -1,7 +1,7 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./from
+	'./from'
 }
 
 impl Array {
@@ -10,7 +10,7 @@ impl Array {
 	
 	@class Array
 	@function append
-	@param	{array}		...		The array to add
+	@param	{array}		'...		The array to add'
 	@return {this}
 	
 	@example basics

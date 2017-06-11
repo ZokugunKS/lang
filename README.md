@@ -6,6 +6,7 @@
 ![Dependencies](https://img.shields.io/david/ZokugunKS/lang.svg)
 [![Build Status](https://travis-ci.org/ZokugunKS/lang.svg?branch=master)](https://travis-ci.org/ZokugunKS/lang)
 [![CircleCI](https://circleci.com/gh/ZokugunKS/lang/tree/master.svg?style=shield)](https://circleci.com/gh/ZokugunKS/lang/tree/master)
+[![Coverage Status](https://img.shields.io/coveralls/ZokugunKS/lang/master.svg)](https://coveralls.io/github/ZokugunKS/lang)
 [![Waffle.io](https://img.shields.io/badge/kanban-waffle.io-blue.svg)](https://waffle.io/ZokugunKS/lang)
 
 Provide basics methods for Array, Function, Number, Object and String

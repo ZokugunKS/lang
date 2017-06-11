@@ -1,11 +1,11 @@
-include once ../inc/array
+include once '../inc/array'
 
 impl Array {
 	/**[md.zot]**api**
 	Add the values of the given array at the beginning of the array.
 	
 	@function prepend
-	@param	{array}		...		The array to add
+	@param	{array}		'...		The array to add'
 	@return {this}
 	
 	@example basics

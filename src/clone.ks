@@ -1,6 +1,6 @@
 include once {
-	./array/clone
-	./object/clone
+	'./array/clone'
+	'./object/clone'
 }
 
 /**[md.zot]**api**

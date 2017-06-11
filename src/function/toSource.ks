@@ -1,7 +1,7 @@
 include once {
-	../inc/function
+	'../inc/function'
 	
-	../toSource
+	'../toSource'
 }
 
 impl Function {

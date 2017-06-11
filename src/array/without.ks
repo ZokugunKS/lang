@@ -1,8 +1,8 @@
 include once {
-	../inc/array
+	'../inc/array'
 	
-	./from
-	./remove
+	'./from'
+	'./remove'
 }
 
 impl Array {
@@ -11,7 +11,7 @@ impl Array {
 	
 	@class Array
 	@function without
-	@param	{any}	...		The values to remove
+	@param	{any}	'...		The values to remove'
 	@return {this}
 	
 	@example basics

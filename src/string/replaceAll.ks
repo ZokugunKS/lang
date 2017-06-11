@@ -1,4 +1,4 @@
-include once ../inc/string
+include once '../inc/string'
 
 impl String {
 	/**[md.zot]**api**
@@ -12,7 +12,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance replaceAll :default').code()}}
 	**/
-	replaceAll(find: String, replacement): String {
+	replaceAll(find: String, replacement: String): String {
 		return this.valueOf() if find.length == 0
 		
 		if find.length <= 3 {
