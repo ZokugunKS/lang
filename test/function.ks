@@ -9,9 +9,9 @@ extern {
 }
 
 import {
-	Type		from '@kaoscript/runtime'
-	expect 		from 'chai'
-	*			from '../index.ks'
+	'@kaoscript/runtime'	for Type
+	'chai'					for expect
+	'../index.ks'
 }
 
 describe('function', func() {

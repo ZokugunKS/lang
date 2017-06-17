@@ -6,8 +6,8 @@ extern {
 }
 
 import {
-	expect 		from 'chai'
-	*			from '../index.ks'
+	'chai'			for expect
+	'../index.ks'
 }
 
 describe('regexp', func() {

@@ -6,9 +6,10 @@ extern {
 }
 
 import {
-	expect 		from 'chai'
-	*			from '../index.ks'
+	'chai'			for expect
+	'../index.ks'
 }
+
 describe('universal', func() {
 	it('clone', func() { // {{{
 		let a1 = [1, 2, 3]
