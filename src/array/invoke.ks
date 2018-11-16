@@ -1,4 +1,4 @@
-include once './map'
+include './map'
 
 impl Array {
 	/**[md.zot]**api**

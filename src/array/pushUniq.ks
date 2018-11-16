@@ -1,4 +1,4 @@
-include once './contains'
+include './contains'
 
 impl Array {
 	/**[md.zot]**api**

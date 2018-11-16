@@ -28,7 +28,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@kaoscript/coverage-istanbul": "0.1.x",
-		"@kaoscript/runtime": "0.5.x",
+		"@kaoscript/runtime": "github:kaoscript/runtime#v0.6.0",
 		"@kaoscript/target-commons": "0.1.x",
 		"@kaoscript/webpack-loader": "0.3.x",
 		"@zokugun/istanbul.cover": "0.5.x",
@@ -37,7 +37,7 @@
 		"chai": "2.x",
 		"coveralls": "2.x",
 		"istanbul": "^0.4",
-		"kaoscript": "0.8.x",
+		"kaoscript": "github:kaoscript/kaoscript#v0.9.0",
 		"karma": "1.x",
 		"karma-chrome-launcher": "2.x",
 		"karma-firefox-launcher": "1.x",

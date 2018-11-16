@@ -1,5 +1,5 @@
-include once '../inc/math'
-include once '../inc/number'
+include '../inc/math'
+include '../inc/number'
 
 impl Number {
 	/**[md.zot]**api**

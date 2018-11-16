@@ -1,4 +1,4 @@
-include once {
+include {
 	'./array/toSource'
 	'./function/toSource'
 	'./object/toSource'

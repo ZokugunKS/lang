@@ -1,4 +1,4 @@
-include once '../inc/regexp'
+include '../inc/regexp'
 
 impl RegExp {
 	/**[md.zot]**api**

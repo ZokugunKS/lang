@@ -1,4 +1,4 @@
-include once {
+include {
 	'./array/clone'
 	'./object/clone'
 }
@@ -16,7 +16,7 @@ Returns the clone of the given *value*.
 **/
 export func clone(value = null) { // {{{
 	if value == null {
-		return null 
+		return null
 	}
 	else if value is Array {
 		return value:Array.clone()

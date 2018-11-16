@@ -1,4 +1,4 @@
-include once {
+include {
 	'../string/escapeRegex'
 	'../array/from'
 }

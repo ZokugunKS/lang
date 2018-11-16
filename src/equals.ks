@@ -1,4 +1,4 @@
-include once {
+include {
 	'./array/equals'
 	'./object/equals'
 }

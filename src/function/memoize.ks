@@ -1,4 +1,4 @@
-include once {
+include {
 	'../inc/function'
 	
 	'../object/hasKey'

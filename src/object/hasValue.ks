@@ -1,4 +1,4 @@
-include once './keyOf'
+include './keyOf'
 
 impl Object {
 	/**[md.zot]**api**

@@ -1,4 +1,4 @@
-include once '../inc/string'
+include '../inc/string'
 
 impl Object {
 	/**[md.zot]**api**

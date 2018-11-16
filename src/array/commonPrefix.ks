@@ -1,4 +1,4 @@
-include once '../inc/array'
+include '../inc/array'
 
 extern console
 

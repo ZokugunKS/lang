@@ -1,6 +1,6 @@
-include once {
+include {
 	'../inc/array'
-	
+
 	'./from'
 	'./pushUniq'
 }
@@ -8,12 +8,12 @@ include once {
 impl Array {
 	/**[md.zot]**api**
 	Add all the values of the given array only if they aren't contained in the array.
-	
+
 	@class Array
 	@function appendUniq
-	@param	{array}		'...		The array to append'
+	@param	{array}		'...'		The array to append
 	@return {this}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array instance appendUniq :one').code()}}
 	**/
@@ -26,7 +26,7 @@ impl Array {
 				this.pushUniq(...args[i])
 			}
 		}
-		
+
 		return this
 	}
 }

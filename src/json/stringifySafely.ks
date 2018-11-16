@@ -1,4 +1,4 @@
-include once '../inc/json'
+include '../inc/json'
 
 func $path(value, seen, keys) { // {{{
 	let index = seen.indexOf(value)

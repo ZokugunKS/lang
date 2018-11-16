@@ -1,4 +1,4 @@
-include once '../inc/math'
+include '../inc/math'
 
 impl Math {
 	/**[md.zot]**api**

@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  **/
-include once {
+include {
 	'./src/inc/array'
 	'./src/inc/boolean'
 	'./src/inc/date'
@@ -18,12 +18,12 @@ include once {
 	'./src/inc/regexp'
 	'./src/inc/string'
 	'./src/inc/math'
-	
+
 	'./src/clone'
 	'./src/copy'
 	'./src/equals'
 	'./src/toSource'
-	
+
 	'./src/array/any'
 	'./src/array/append'
 	'./src/array/appendUniq'
@@ -82,9 +82,9 @@ include once {
 	'./src/array/unzip'
 	'./src/array/without'
 	'./src/array/zip'
-	
+
 	'./src/boolean/toBoolean'
-	
+
 	'./src/function/async'
 	'./src/function/curry'
 	'./src/function/debounce'
@@ -102,11 +102,11 @@ include once {
 	'./src/function/try'
 	'./src/function/until'
 	'./src/function/wrap'
-	
+
 	'./src/json/stringifySafely'
-	
+
 	'./src/math/limit'
-	
+
 	'./src/number/between'
 	'./src/number/beyond'
 	'./src/number/ceil'
@@ -120,7 +120,7 @@ include once {
 	'./src/number/toFloat'
 	'./src/number/toInt'
 	'./src/number/zeroPad'
-	
+
 	'./src/object/append'
 	'./src/object/clone'
 	'./src/object/copy'
@@ -142,10 +142,10 @@ include once {
 	'./src/object/toSource'
 	'./src/object/value'
 	'./src/object/values'
-	
+
 	'./src/regexp/clone'
 	'./src/regexp/length'
-	
+
 	'./src/string/after'
 	'./src/string/append'
 	'./src/string/before'

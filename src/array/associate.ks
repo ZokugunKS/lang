@@ -1,4 +1,4 @@
-include once {
+include {
 	'../inc/array'
 	'../inc/math'
 }

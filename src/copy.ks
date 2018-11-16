@@ -1,4 +1,4 @@
-include once {
+include {
 	'./array/copy'
 	'./object/copy'
 }

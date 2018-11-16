@@ -1,14 +1,18 @@
-include once '../inc/array'
+include {
+	'../inc/array'
+
+	'./from'
+}
 
 impl Array {
 	/**[md.zot]**api**
 	Insert the values of the given array at the given *index*.
-	
+
 	@function injectAt
 	@param	{number}	index	The index to insert at
 	@param	{any}		'...		The array of values to insert'
 	@return {this}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array instance injectAt :3:1:a').code()}}
 	**/
@@ -19,7 +23,7 @@ impl Array {
 			}
 			while index < 0
 		}
-		
+
 		if args.length > 1 {
 			if index {
 				if index >= this.length {
@@ -28,10 +32,13 @@ impl Array {
 					}
 				}
 				else {
+					let arg
 					for i from 0 til args.length {
-						this.splice(index, 0, ...args[i])
-						
-						index += [].concat(args[i]).length
+						arg = Array.from(args[i])
+
+						this.splice(index, 0, ...arg)
+
+						index += arg.length
 					}
 				}
 			}
@@ -54,7 +61,7 @@ impl Array {
 				this.unshift(...args[0])
 			}
 		}
-		
+
 		return this
 	}
 }

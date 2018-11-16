@@ -1,4 +1,4 @@
-include once './copy'
+include './copy'
 
 impl Array {
 	/**[md.zot]**api**

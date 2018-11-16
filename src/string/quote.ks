@@ -1,4 +1,4 @@
-include once './replaceAll'
+include './replaceAll'
 
 impl String {
 	/**[md.zot]**api**

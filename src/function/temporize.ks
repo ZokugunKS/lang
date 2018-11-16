@@ -1,4 +1,4 @@
-include once '../inc/function'
+include '../inc/function'
 
 impl Function {
 	/**[md.zot]**api**

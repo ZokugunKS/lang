@@ -1,18 +1,18 @@
-include once {
+include {
 	'../inc/array'
-	
+
 	'./from'
 }
 
 impl Array {
 	/**[md.zot]**api**
 	Append the values of the given array to the array.
-	
+
 	@class Array
 	@function append
-	@param	{array}		'...		The array to add'
+	@param	{array}		'...'		The array to add
 	@return {this}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array instance append :one').code()}}
 	**/
@@ -25,7 +25,7 @@ impl Array {
 				this.push(...args[i])
 			}
 		}
-		
+
 		return this
 	}
 }

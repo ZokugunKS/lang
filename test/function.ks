@@ -34,7 +34,7 @@ describe('function', func() {
 				expect(flags.foo).to.be.equal(1)
 				
 				done()
-			}, 10)
+			}, 50)
 		}) // }}}
 		
 		it('bind :wa', func() { // {{{
