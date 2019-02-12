@@ -25,12 +25,6 @@ module.exports = function(config) {
 			platform: 'Windows 8.1',
 			version: '11.0'
 		},
-		sl_ie_9_w7: {
-			base: 'SauceLabs',
-			browserName: 'internet explorer',
-			platform: 'Windows 7',
-			version: '9.0'
-		},
 		// Android
 		sl_android_51: {
 			base: 'SauceLabs',

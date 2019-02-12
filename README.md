@@ -15,11 +15,12 @@ Provide basics methods for Array, Function, Number, Object and String
 Compatibility
 ---------------------
 
-| ![Chrome][chrome]      | ![Edge][edge]          | ![Firefox][firefox]    | ![IE][ie]              | ![Safari][safari]      | ![Android][android]    | ![iOS][ios]               | ![Node.js][nodejs]        |
-|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|---------------------------|---------------------------|
-| :heavy_check_mark: 55  | :heavy_check_mark: 14  | :heavy_check_mark: 50  | :heavy_check_mark: 11  | :heavy_check_mark: 10  | :grey_question: 6.0    | :heavy_check_mark: 10     | :heavy_check_mark: 6      |
-| :heavy_check_mark: 45  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :heavy_check_mark: 9   | :heavy_check_mark: 9   | :heavy_check_mark: 5.1 | :heavy_check_mark: 9      | :heavy_check_mark: 4      |
-|                        |                        |                        |                        |                        | :heavy_check_mark: 4.4 | :heavy_check_mark: 8      |                           |
+| ![Chrome][chrome]      | ![Edge][edge]          | ![Firefox][firefox]    | ![IE][ie]              | ![Safari][safari]      | ![Android][android]      | ![iOS][ios]               | ![Node.js][nodejs]        |
+|------------------------|------------------------|------------------------|------------------------|------------------------|--------------------------|---------------------------|---------------------------|
+| :heavy_check_mark: 72  | :heavy_check_mark: 16  | :heavy_check_mark: 65  | :heavy_check_mark: 11  | :heavy_check_mark: 12  | :heavy_check_mark: 8.0  | :heavy_check_mark: 12     | :heavy_check_mark: 11      |
+| :heavy_check_mark: 40  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :heavy_check_mark: 9*   | :heavy_check_mark: 9   | :heavy_check_mark: 4.4   | :heavy_check_mark: 8      | :heavy_check_mark: 4.5*      |
+
+\* tested manually due to limitation of automated testing tools
 
 License
 -------
