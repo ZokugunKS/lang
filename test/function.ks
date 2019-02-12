@@ -290,7 +290,7 @@ describe('function', func() {
 				expect(source.replace(/__cov_\$\w+_\w+\.\w\['\d+'\]\+\+/g, '')).to.equal('function(item){return typeof item===\'function\'}')
 			}
 			else {
-				expect(source).to.equal('function(e){return"function"==typeof e}')
+				expect(/^function\(e\)\s*\{return"function"==typeof e\;?}$/.test(source)).to.be.true
 			}
 		}) // }}}
 
