@@ -6,3 +6,4 @@ node_modules
 test/_test.js
 *.log
 coverage
+.coveralls.yml
