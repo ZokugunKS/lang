@@ -120,16 +120,16 @@ module.exports = function(config) {
 		},
 		singleRun: true,
 		autoWatch: false,
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_DEBUG,
 		colors: true,
 		port: 9876,
 		concurrency: 1,
-		captureTimeout: 300000,
-		browserNoActivityTimeout: 60000,
+		captureTimeout: 60000,
+		browserNoActivityTimeout: 10000,
 		sauceLabs: {
 			testName: '@zokugun/lang',
-			recordVideo: false,
-			recordScreenshots: false,
+			recordVideo: true,
+			recordScreenshots: true,
 			connectOptions: {
 				port: 5757
 			},
