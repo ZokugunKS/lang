@@ -90,7 +90,7 @@ module.exports = function(config) {
 		colors: true,
 		port: 9876,
 		concurrency: 1,
-		captureTimeout: 60000,
+		captureTimeout: 300000,
 		browserNoActivityTimeout: 10000,
 		sauceLabs: {
 			testName: '@zokugun/lang',

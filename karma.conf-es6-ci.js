@@ -6,7 +6,7 @@ module.exports = function(config) {
 
 	const customLaunchers = {
 		// Chrome
-		sl_chrome_72_w10: {
+		/* sl_chrome_72_w10: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
 			platform: 'Windows 10',
@@ -56,7 +56,7 @@ module.exports = function(config) {
 			browserName: 'microsoftedge',
 			platform: 'Windows 10',
 			version: '16.16299'
-		},
+		}, */
 		// iOS
 		sl_ios_12: {
 			base: 'SauceLabs',
@@ -124,7 +124,7 @@ module.exports = function(config) {
 		colors: true,
 		port: 9876,
 		concurrency: 1,
-		captureTimeout: 60000,
+		captureTimeout: 300000,
 		browserNoActivityTimeout: 10000,
 		sauceLabs: {
 			testName: '@zokugun/lang',
