@@ -5,13 +5,11 @@ module.exports = function(config) {
 	}
 
 	const customLaunchers = {
-		sl_android_8: {
+		sl_chrome_72_x12: {
 			base: 'SauceLabs',
-			browserName: 'Browser',
-			platform: 'Android',
-			version: '8.0',
-			deviceName: 'Android Emulator',
-			deviceOrientation: 'portrait'
+			browserName: 'chrome',
+			platform: 'macOS 10.12',
+			version: '72.0'
 		},
 	};
 
@@ -23,7 +21,7 @@ module.exports = function(config) {
 			'test/decisions.ks'
 		],
 		plugins: [
-			'karma-sauce-launcher',
+			'@mocha/karma-sauce-launcher',
 			'karma-chai',
 			'karma-mocha',
 			'karma-webpack',
@@ -66,6 +64,7 @@ module.exports = function(config) {
 		browserNoActivityTimeout: 60000,
 		sauceLabs: {
 			testName: '@zokugun/lang',
+			recordVideo: true,
 			recordScreenshots: true,
 			connectOptions: {
 				port: 5757

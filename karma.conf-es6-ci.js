@@ -12,10 +12,10 @@ module.exports = function(config) {
 			platform: 'Windows 10',
 			version: '72.0'
 		},
-		sl_chrome_72_x14: {
+		sl_chrome_72_x12: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
-			platform: 'macOS 10.14',
+			platform: 'macOS 10.12',
 			version: '72.0'
 		},
 		// Firefox
@@ -31,10 +31,10 @@ module.exports = function(config) {
 			platform: 'Windows 7',
 			version: '47.0'
 		},
-		sl_firefox_65_x14: {
+		sl_firefox_65_x12: {
 			base: 'SauceLabs',
 			browserName: 'firefox',
-			platform: 'macOS 10.14',
+			platform: 'macOS 10.12',
 			version: '65.0'
 		},
 		sl_firefox_47_x11: {
@@ -44,16 +44,16 @@ module.exports = function(config) {
 			version: '47.0'
 		},
 		// Safari
-		sl_safari_12_x14: {
+		sl_safari_12_x13: {
 			base: 'SauceLabs',
 			browserName: 'safari',
-			platform: 'macOS 10.14',
+			platform: 'macOS 10.13',
 			version: '12.0'
 		},
 		// Edge
 		sl_edge_16_w10: {
 			base: 'SauceLabs',
-			browserName: 'MicrosoftEdge',
+			browserName: 'microsoftedge',
 			platform: 'Windows 10',
 			version: '16.16299'
 		},
@@ -85,7 +85,7 @@ module.exports = function(config) {
 			'test/*.ks'
 		],
 		plugins: [
-			'karma-sauce-launcher',
+			'@mocha/karma-sauce-launcher',
 			'karma-chai',
 			'karma-mocha',
 			'karma-webpack',
@@ -128,6 +128,7 @@ module.exports = function(config) {
 		browserNoActivityTimeout: 60000,
 		sauceLabs: {
 			testName: '@zokugun/lang',
+			recordVideo: false,
 			recordScreenshots: false,
 			connectOptions: {
 				port: 5757

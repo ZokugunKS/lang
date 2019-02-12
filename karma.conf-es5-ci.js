@@ -51,7 +51,7 @@ module.exports = function(config) {
 			'test/*.ks'
 		],
 		plugins: [
-			'karma-sauce-launcher',
+			'@mocha/karma-sauce-launcher',
 			'karma-chai',
 			'karma-mocha',
 			'karma-webpack',
@@ -94,6 +94,7 @@ module.exports = function(config) {
 		browserNoActivityTimeout: 60000,
 		sauceLabs: {
 			testName: '@zokugun/lang',
+			recordVideo: false,
 			recordScreenshots: false,
 			connectOptions: {
 				port: 5757
