@@ -1,8 +1,8 @@
 test:
 ifeq ($(g),)
-	./node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec
+	./node_modules/.bin/mocha --exit --colors --check-leaks --require kaoscript/register --reporter spec "test/*.ks"
 else
-	./node_modules/.bin/mocha --colors --check-leaks --compilers ks:kaoscript/register --reporter spec -g "$(g)"
+	./node_modules/.bin/mocha --exit --colors --check-leaks --require kaoscript/register --reporter spec -g "$(g)" "test/*.ks"
 endif
 
 coverage:
@@ -14,6 +14,9 @@ endif
 
 btest:
 	./node_modules/.bin/webpack -c test/string.ks test/_test.js
+
+ktest:
+	npx karma start karma.conf-debug.js
 
 clean:
 	find -L . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -exec rm {} \;

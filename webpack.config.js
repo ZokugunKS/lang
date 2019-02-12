@@ -1,15 +1,20 @@
 module.exports = [
 	{
+		mode: 'production',
 		module: {
-			loaders: [
+			rules: [
 				{
 					test: /\.ks$/,
-					loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
+					use: [
+						{
+							loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
+						}
+					]
 				}
 			]
 		},
-		resolve: {
-			extensions: ['', '.js', '.ks']
+		performance: {
+			hints: false
 		}
 	}
 ];

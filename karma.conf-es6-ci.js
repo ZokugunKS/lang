@@ -3,27 +3,27 @@ module.exports = function(config) {
 		console.error('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
 		process.exit(1);
 	}
-	
+
 	const customLaunchers = {
 		// Chrome
-		sl_chrome_55_w10: {
+		sl_chrome_72_w10: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
 			platform: 'Windows 10',
-			version: '55.0'
+			version: '72.0'
 		},
-		sl_chrome_55_x12: {
+		sl_chrome_72_x14: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
-			platform: 'macOS 10.12',
-			version: '55.0'
+			platform: 'macOS 10.14',
+			version: '72.0'
 		},
 		// Firefox
-		sl_firefox_50_w10: {
+		sl_firefox_65_w10: {
 			base: 'SauceLabs',
 			browserName: 'firefox',
 			platform: 'Windows 10',
-			version: '50.0'
+			version: '65.0'
 		},
 		sl_firefox_47_w7: {
 			base: 'SauceLabs',
@@ -31,11 +31,11 @@ module.exports = function(config) {
 			platform: 'Windows 7',
 			version: '47.0'
 		},
-		sl_firefox_50_x12: {
+		sl_firefox_65_x14: {
 			base: 'SauceLabs',
 			browserName: 'firefox',
-			platform: 'macOS 10.12',
-			version: '50.0'
+			platform: 'macOS 10.14',
+			version: '65.0'
 		},
 		sl_firefox_47_x11: {
 			base: 'SauceLabs',
@@ -44,30 +44,39 @@ module.exports = function(config) {
 			version: '47.0'
 		},
 		// Safari
-		sl_safari_10_x12: {
+		sl_safari_12_x14: {
 			base: 'SauceLabs',
 			browserName: 'safari',
-			platform: 'macOS 10.12',
-			version: '10.0'
+			platform: 'macOS 10.14',
+			version: '12.0'
 		},
 		// Edge
-		sl_edge_14_w10: {
+		sl_edge_16_w10: {
 			base: 'SauceLabs',
 			browserName: 'MicrosoftEdge',
 			platform: 'Windows 10',
-			version: '14.14393'
+			version: '16.16299'
 		},
 		// iOS
-		sl_ios_10: {
+		sl_ios_12: {
 			base: 'SauceLabs',
-			browserName: 'iphone',
-			platform: 'OS X 10.11',
-			version: '10.0',
-			deviceName: 'iPhone 7',
+			browserName: 'Safari',
+			platform: 'iOS',
+			version: '12.0',
+			deviceName: 'iPhone XS',
+			deviceOrientation: 'portrait'
+		},
+		// Android
+		sl_android_8: {
+			base: 'SauceLabs',
+			browserName: 'Browser',
+			platform: 'Android',
+			version: '8.0',
+			deviceName: 'Android Emulator',
 			deviceOrientation: 'portrait'
 		},
 	};
-	
+
 	config.set({
 		customLaunchers: customLaunchers,
 		browsers: Object.keys(customLaunchers),
@@ -88,16 +97,21 @@ module.exports = function(config) {
 		reporters: [ 'mocha', 'saucelabs' ],
 		webpack: [
 			{
+				mode: 'production',
 				module: {
-					loaders: [
+					rules: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=ecma-v6'
+							use: [
+								{
+									loader: '@kaoscript/webpack-loader?target=ecma-v6&register=@kaoscript/target-commons'
+								}
+							]
 						}
 					]
 				},
-				resolve: {
-					extensions: ['', '.js', '.ks']
+				performance: {
+					hints: false
 				}
 			}
 		],

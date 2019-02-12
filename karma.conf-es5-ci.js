@@ -3,20 +3,20 @@ module.exports = function(config) {
 		console.error('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
 		process.exit(1);
 	}
-	
+
 	const customLaunchers = {
 		// Chrome
-		sl_chrome_45_w7: {
+		sl_chrome_40_w7: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
 			platform: 'Windows 7',
-			version: '45.0'
+			version: '40.0'
 		},
-		sl_chrome_45_x11: {
+		sl_chrome_40_x11: {
 			base: 'SauceLabs',
 			browserName: 'chrome',
 			platform: 'OS X 10.11',
-			version: '45.0'
+			version: '40.0'
 		},
 		// Safari
 		sl_safari_9_x11: {
@@ -42,7 +42,7 @@ module.exports = function(config) {
 			deviceOrientation: 'portrait'
 		},
 	};
-	
+
 	config.set({
 		customLaunchers: customLaunchers,
 		browsers: Object.keys(customLaunchers),
@@ -63,16 +63,21 @@ module.exports = function(config) {
 		reporters: [ 'mocha', 'saucelabs' ],
 		webpack: [
 			{
+				mode: 'production',
 				module: {
-					loaders: [
+					rules: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=ecma-v5'
+							use: [
+								{
+									loader: '@kaoscript/webpack-loader?target=ecma-v5&register=@kaoscript/target-commons'
+								}
+							]
 						}
 					]
 				},
-				resolve: {
-					extensions: ['', '.js', '.ks']
+				performance: {
+					hints: false
 				}
 			}
 		],

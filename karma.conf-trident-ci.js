@@ -3,7 +3,7 @@ module.exports = function(config) {
 		console.error('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
 		process.exit(1);
 	}
-	
+
 	const customLaunchers = {
 		// Safari
 		sl_safari_8_x10: {
@@ -17,7 +17,7 @@ module.exports = function(config) {
 			base: 'SauceLabs',
 			browserName: 'internet explorer',
 			platform: 'Windows 10',
-			version: '11.103'
+			version: '11.285'
 		},
 		sl_ie_11_w8: {
 			base: 'SauceLabs',
@@ -30,15 +30,6 @@ module.exports = function(config) {
 			browserName: 'internet explorer',
 			platform: 'Windows 7',
 			version: '9.0'
-		},
-		// iOS
-		sl_ios_8: {
-			base: 'SauceLabs',
-			browserName: 'iphone',
-			platform: 'OS X 10.11',
-			version: '8.4',
-			deviceName: 'iPhone 6',
-			deviceOrientation: 'portrait'
 		},
 		// Android
 		sl_android_51: {
@@ -56,7 +47,7 @@ module.exports = function(config) {
 			deviceName: 'Android Emulator',
 		},
 	};
-	
+
 	config.set({
 		customLaunchers: customLaunchers,
 		browsers: Object.keys(customLaunchers),
@@ -77,16 +68,21 @@ module.exports = function(config) {
 		reporters: [ 'mocha', 'saucelabs' ],
 		webpack: [
 			{
+				mode: 'production',
 				module: {
-					loaders: [
+					rules: [
 						{
 							test: /\.ks$/,
-							loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
+							use: [
+								{
+									loader: '@kaoscript/webpack-loader?target=trident-v5&register=@kaoscript/target-commons'
+								}
+							]
 						}
 					]
 				},
-				resolve: {
-					extensions: ['', '.js', '.ks']
+				performance: {
+					hints: false
 				}
 			}
 		],
