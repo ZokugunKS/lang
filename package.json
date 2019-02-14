@@ -51,6 +51,9 @@
 		"webpack": "^4.29.3",
 		"webpack-cli": "^3.2.3"
 	},
+  "peerDependencies": {
+    "kaoscript": "^0.9.0"
+  },
 	"scripts": {
 		"push-coverage": "npm run test-coverage && cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
 		"test": "npm run test-mocha",

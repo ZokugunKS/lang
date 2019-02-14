@@ -13,7 +13,7 @@ else
 endif
 
 btest:
-	./node_modules/.bin/webpack -c test/string.ks test/_test.js
+	./node_modules/.bin/webpack test/string.ks --o test/_test.js
 
 ktest:
 	npx karma start karma.conf-debug.js
