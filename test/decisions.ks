@@ -14,66 +14,70 @@ import {
 describe('decisions', func() {
 	func foo() {
 	}
-	
+
 	class Foo {
 		hello() => 'hello world'
 	}
-	
+
 	it('isArray', func() { // {{{
+		let v
+
 		// true
-		expect([] is Array).to.be.true
-		expect([1, 2, 3] is Array).to.be.true
-		
+		expect((v = []) is Array).to.be.true
+		expect((v = [1, 2, 3]) is Array).to.be.true
+
 		// false
-		expect(null is Array).to.be.false
-		expect(false is Array).to.be.false
-		expect(true is Array).to.be.false
-		expect('' is Array).to.be.false
-		expect('hello world' is Array).to.be.false
-		expect(42 is Array).to.be.false
-		expect('42' is Array).to.be.false
-		expect({} is Array).to.be.false
-		expect({
+		expect((v = null) is Array).to.be.false
+		expect((v = false) is Array).to.be.false
+		expect((v = true) is Array).to.be.false
+		expect((v = '') is Array).to.be.false
+		expect((v = 'hello world') is Array).to.be.false
+		expect((v = 42) is Array).to.be.false
+		expect((v = '42') is Array).to.be.false
+		expect((v = {}) is Array).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is Array).to.be.false
-		expect(foo is Array).to.be.false
-		expect(Foo is Array).to.be.false
-		expect(/hello/ is Array).to.be.false
-		expect('http://www.zokugun.org' is Array).to.be.false
-		expect(new Date() is Array).to.be.false
-		expect(Date is Array).to.be.false
+		}) is Array).to.be.false
+		expect((v = foo) is Array).to.be.false
+		expect((v = Foo) is Array).to.be.false
+		expect((v = /hello/) is Array).to.be.false
+		expect((v = 'http://www.zokugun.org') is Array).to.be.false
+		expect((v = new Date()) is Array).to.be.false
+		expect((v = Date) is Array).to.be.false
 	}) // }}}
-	
+
 	it('isBoolean', func() { // {{{
+		let v
+
 		// true
-		expect(false is Boolean).to.be.true
-		expect(true is Boolean).to.be.true
-		
+		expect((v = false) is Boolean).to.be.true
+		expect((v = true) is Boolean).to.be.true
+
 		// false
-		expect([] is Boolean).to.be.false
-		expect([1, 2, 3] is Boolean).to.be.false
-		expect(null is Boolean).to.be.false
-		expect('' is Boolean).to.be.false
-		expect('hello world' is Boolean).to.be.false
-		expect(42 is Boolean).to.be.false
-		expect('42' is Boolean).to.be.false
-		expect({} is Boolean).to.be.false
-		expect({
+		expect((v = []) is Boolean).to.be.false
+		expect((v = [1, 2, 3]) is Boolean).to.be.false
+		expect((v = null) is Boolean).to.be.false
+		expect((v = '') is Boolean).to.be.false
+		expect((v = 'hello world') is Boolean).to.be.false
+		expect((v = 42) is Boolean).to.be.false
+		expect((v = '42') is Boolean).to.be.false
+		expect((v = {}) is Boolean).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is Boolean).to.be.false
-		expect(foo is Boolean).to.be.false
-		expect(Foo is Boolean).to.be.false
-		expect(/hello/ is Boolean).to.be.false
-		expect('http://www.zokugun.org' is Boolean).to.be.false
-		expect(new Date() is Boolean).to.be.false
-		expect(Date is Boolean).to.be.false
+		}) is Boolean).to.be.false
+		expect((v = foo) is Boolean).to.be.false
+		expect((v = Foo) is Boolean).to.be.false
+		expect((v = /hello/) is Boolean).to.be.false
+		expect((v = 'http://www.zokugun.org') is Boolean).to.be.false
+		expect((v = new Date()) is Boolean).to.be.false
+		expect((v = Date) is Boolean).to.be.false
 	}) // }}}
-	
+
 	it('isConstructor', func() { // {{{
 		// true
 		expect(Type.isConstructor(Foo)).to.be.true
 		expect(Type.isConstructor(Date)).to.be.true
-		
+
 		// false
 		expect(Type.isConstructor([])).to.be.false
 		expect(Type.isConstructor([1, 2, 3])).to.be.false
@@ -93,36 +97,38 @@ describe('decisions', func() {
 		expect(Type.isConstructor('http://www.Type.org')).to.be.false
 		expect(Type.isConstructor(new Date())).to.be.false
 	}) // }}}
-	
+
 	it('isDate', func() { // {{{
+		let v
+
 		// true
-		expect(new Date() is Date).to.be.true
-		
+		expect((v = new Date()) is Date).to.be.true
+
 		// false
-		expect([] is Date).to.be.false
-		expect([1, 2, 3] is Date).to.be.false
-		expect(null is Date).to.be.false
-		expect(false is Date).to.be.false
-		expect(true is Date).to.be.false
-		expect('' is Date).to.be.false
-		expect('hello world' is Date).to.be.false
-		expect(42 is Date).to.be.false
-		expect('42' is Date).to.be.false
-		expect({} is Date).to.be.false
-		expect({
+		expect((v = []) is Date).to.be.false
+		expect((v = [1, 2, 3]) is Date).to.be.false
+		expect((v = null) is Date).to.be.false
+		expect((v = false) is Date).to.be.false
+		expect((v = true) is Date).to.be.false
+		expect((v = '') is Date).to.be.false
+		expect((v = 'hello world') is Date).to.be.false
+		expect((v = 42) is Date).to.be.false
+		expect((v = '42') is Date).to.be.false
+		expect((v = {}) is Date).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is Date).to.be.false
-		expect(foo is Date).to.be.false
-		expect(Foo is Date).to.be.false
-		expect(/hello/ is Date).to.be.false
-		expect('http://www.zokugun.org' is Date).to.be.false
-		expect(Date is Date).to.be.false
+		}) is Date).to.be.false
+		expect((v = foo) is Date).to.be.false
+		expect((v = Foo) is Date).to.be.false
+		expect((v = /hello/) is Date).to.be.false
+		expect((v = 'http://www.zokugun.org') is Date).to.be.false
+		expect((v = Date) is Date).to.be.false
 	}) // }}}
-	
+
 	it('isEmptyObject', func() { // {{{
 		// true
 		expect(Type.isEmptyObject({})).to.be.true
-		
+
 		// false
 		expect(Type.isEmptyObject([])).to.be.false
 		expect(Type.isEmptyObject([1, 2, 3])).to.be.false
@@ -143,58 +149,64 @@ describe('decisions', func() {
 		expect(Type.isEmptyObject(new Date())).to.be.false
 		expect(Type.isEmptyObject(Date)).to.be.false
 	}) // }}}
-	
+
 	it('isFunction', func() { // {{{
+		let v
+
 		// true
-		expect(foo is Function).to.be.true
-		
+		expect((v = foo) is Function).to.be.true
+
 		// false
-		expect([] is Function).to.be.false
-		expect([1, 2, 3] is Function).to.be.false
-		expect(null is Function).to.be.false
-		expect(false is Function).to.be.false
-		expect(true is Function).to.be.false
-		expect('' is Function).to.be.false
-		expect('hello world' is Function).to.be.false
-		expect(42 is Function).to.be.false
-		expect('42' is Function).to.be.false
-		expect({} is Function).to.be.false
-		expect({
+		expect((v = []) is Function).to.be.false
+		expect((v = [1, 2, 3]) is Function).to.be.false
+		expect((v = null) is Function).to.be.false
+		expect((v = false) is Function).to.be.false
+		expect((v = true) is Function).to.be.false
+		expect((v = '') is Function).to.be.false
+		expect((v = 'hello world') is Function).to.be.false
+		expect((v = 42) is Function).to.be.false
+		expect((v = '42') is Function).to.be.false
+		expect((v = {}) is Function).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is Function).to.be.false
-		expect(/hello/ is Function).to.be.false
-		expect('http://www.zokugun.org' is Function).to.be.false
-		expect(new Date() is Function).to.be.false
+		}) is Function).to.be.false
+		expect((v = /hello/) is Function).to.be.false
+		expect((v = 'http://www.zokugun.org') is Function).to.be.false
+		expect((v = new Date()) is Function).to.be.false
 	}) // }}}
-	
+
 	it('isNumber', func() { // {{{
+		let v
+
 		// true
-		expect(42 is Number).to.be.true
-		
+		expect((v = 42) is Number).to.be.true
+
 		// false
-		expect([] is Number).to.be.false
-		expect([1, 2, 3] is Number).to.be.false
-		expect(null is Number).to.be.false
-		expect(false is Number).to.be.false
-		expect(true is Number).to.be.false
-		expect('' is Number).to.be.false
-		expect('hello world' is Number).to.be.false
-		expect('42' is Number).to.be.false
-		expect({} is Number).to.be.false
-		expect({
+		expect((v = []) is Number).to.be.false
+		expect((v = [1, 2, 3]) is Number).to.be.false
+		expect((v = null) is Number).to.be.false
+		expect((v = false) is Number).to.be.false
+		expect((v = true) is Number).to.be.false
+		expect((v = '') is Number).to.be.false
+		expect((v = 'hello world') is Number).to.be.false
+		expect((v = '42') is Number).to.be.false
+		expect((v = {}) is Number).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is Number).to.be.false
-		expect(foo is Number).to.be.false
-		expect(/hello/ is Number).to.be.false
-		expect('http://www.zokugun.org' is Number).to.be.false
-		expect(new Date() is Number).to.be.false
+		}) is Number).to.be.false
+		expect((v = foo) is Number).to.be.false
+		expect((v = Foo) is Number).to.be.false
+		expect((v = /hello/) is Number).to.be.false
+		expect((v = 'http://www.zokugun.org') is Number).to.be.false
+		expect((v = new Date()) is Number).to.be.false
+		expect((v = Date) is Number).to.be.false
 	}) // }}}
-	
+
 	it('isNumeric', func() { // {{{
 		// true
 		expect(Type.isNumeric(42)).to.be.true
 		expect(Type.isNumeric('42')).to.be.true
-		
+
 		// false
 		expect(Type.isNumeric([])).to.be.false
 		expect(Type.isNumeric([1, 2, 3])).to.be.false
@@ -212,30 +224,34 @@ describe('decisions', func() {
 		expect(Type.isNumeric('http://www.Type.org')).to.be.false
 		expect(Type.isNumeric(new Date())).to.be.false
 	}) // }}}
-	
+
 	it('isObject', func() { // {{{
+		let v
+
 		// true
-		expect({} is Object).to.be.true
-		expect({
+		expect((v = {}) is Object).to.be.true
+		expect((v = {
 			hello: 'world'
-		} is Object).to.be.true
-		expect(new Date() is Object).to.be.true
-		expect(/hello/ is Object).to.be.true
-		
+		}) is Object).to.be.true
+		expect((v = new Date()) is Object).to.be.true
+		expect((v = /hello/) is Object).to.be.true
+
 		// false
-		expect([] is Object).to.be.false
-		expect([1, 2, 3] is Object).to.be.false
-		expect(null is Object).to.be.false
-		expect(false is Object).to.be.false
-		expect(true is Object).to.be.false
-		expect('' is Object).to.be.false
-		expect('hello world' is Object).to.be.false
-		expect(42 is Object).to.be.false
-		expect('42' is Object).to.be.false
-		expect(foo is Object).to.be.false
-		expect('http://www.zokugun.org' is Object).to.be.false
+		expect((v = []) is Object).to.be.false
+		expect((v = [1, 2, 3]) is Object).to.be.false
+		expect((v = null) is Object).to.be.false
+		expect((v = false) is Object).to.be.false
+		expect((v = true) is Object).to.be.false
+		expect((v = '') is Object).to.be.false
+		expect((v = 'hello world') is Object).to.be.false
+		expect((v = 42) is Object).to.be.false
+		expect((v = '42') is Object).to.be.false
+		expect((v = foo) is Object).to.be.false
+		expect((v = Foo) is Object).to.be.false
+		expect((v = 'http://www.zokugun.org') is Object).to.be.false
+		expect((v = Date) is Object).to.be.false
 	}) // }}}
-	
+
 	it('isPrimitive', func() { // {{{
 		// true
 		expect(Type.isPrimitive(false)).to.be.true
@@ -245,7 +261,7 @@ describe('decisions', func() {
 		expect(Type.isPrimitive(42)).to.be.true
 		expect(Type.isPrimitive('42')).to.be.true
 		expect(Type.isPrimitive('http://www.Type.org')).to.be.true
-		
+
 		// false
 		expect(Type.isPrimitive([])).to.be.false
 		expect(Type.isPrimitive([1, 2, 3])).to.be.false
@@ -260,53 +276,61 @@ describe('decisions', func() {
 		expect(Type.isPrimitive(new Date())).to.be.false
 		expect(Type.isPrimitive(Date)).to.be.false
 	}) // }}}
-	
+
 	it('isString', func() { // {{{
+		let v
+
 		// true
-		expect('' is String).to.be.true
-		expect('hello world' is String).to.be.true
-		expect('http://www.zokugun.org' is String).to.be.true
-		expect('42' is String).to.be.true
-		
+		expect((v = '') is String).to.be.true
+		expect((v = 'hello world') is String).to.be.true
+		expect((v = '42') is String).to.be.true
+		expect((v = 'http://www.zokugun.org') is String).to.be.true
+
 		// false
-		expect([] is String).to.be.false
-		expect([1, 2, 3] is String).to.be.false
-		expect(null is String).to.be.false
-		expect(false is String).to.be.false
-		expect(true is String).to.be.false
-		expect(42 is String).to.be.false
-		expect({} is String).to.be.false
-		expect({
+		expect((v = []) is String).to.be.false
+		expect((v = [1, 2, 3]) is String).to.be.false
+		expect((v = null) is String).to.be.false
+		expect((v = false) is String).to.be.false
+		expect((v = true) is String).to.be.false
+		expect((v = 42) is String).to.be.false
+		expect((v = {}) is String).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is String).to.be.false
-		expect(foo is String).to.be.false
-		expect(/hello/ is String).to.be.false
-		expect(new Date() is String).to.be.false
+		}) is String).to.be.false
+		expect((v = foo) is String).to.be.false
+		expect((v = Foo) is String).to.be.false
+		expect((v = /hello/) is String).to.be.false
+		expect((v = new Date()) is String).to.be.false
+		expect((v = Date) is String).to.be.false
 	}) // }}}
-	
+
 	it('isRegex', func() { // {{{
+		let v
+
 		// true
-		expect(/hello/ is RegExp).to.be.true
-		
+		expect((v = /hello/) is RegExp).to.be.true
+
 		// false
-		expect([] is RegExp).to.be.false
-		expect([1, 2, 3] is RegExp).to.be.false
-		expect(null is RegExp).to.be.false
-		expect(false is RegExp).to.be.false
-		expect(true is RegExp).to.be.false
-		expect('' is RegExp).to.be.false
-		expect('hello world' is RegExp).to.be.false
-		expect(42 is RegExp).to.be.false
-		expect('42' is RegExp).to.be.false
-		expect({} is RegExp).to.be.false
-		expect({
+		expect((v = []) is RegExp).to.be.false
+		expect((v = [1, 2, 3]) is RegExp).to.be.false
+		expect((v = null) is RegExp).to.be.false
+		expect((v = false) is RegExp).to.be.false
+		expect((v = true) is RegExp).to.be.false
+		expect((v = '') is RegExp).to.be.false
+		expect((v = 'hello world') is RegExp).to.be.false
+		expect((v = 42) is RegExp).to.be.false
+		expect((v = '42') is RegExp).to.be.false
+		expect((v = {}) is RegExp).to.be.false
+		expect((v = {
 			hello: 'world'
-		} is RegExp).to.be.false
-		expect(foo is RegExp).to.be.false
-		expect('http://www.zokugun.org' is RegExp).to.be.false
-		expect(new Date() is RegExp).to.be.false
+		}) is RegExp).to.be.false
+		expect((v = foo) is RegExp).to.be.false
+		expect((v = Foo) is RegExp).to.be.false
+		expect((v = 'http://www.zokugun.org') is RegExp).to.be.false
+		expect((v = new Date()) is RegExp).to.be.false
+		expect((v = Date) is RegExp).to.be.false
 	}) // }}}
-	
+
 	it('isValue', func() { // {{{
 		// true
 		expect(Type.isValue([])).to.be.true
@@ -325,11 +349,11 @@ describe('decisions', func() {
 		expect(Type.isValue(/hello/)).to.be.true
 		expect(Type.isValue('http://www.Type.org')).to.be.true
 		expect(Type.isValue(new Date())).to.be.true
-		
+
 		// false
 		expect(Type.isValue(null)).to.be.false
 	}) // }}}
-	
+
 	it('typeOf', func() { // {{{
 		expect(Type.typeOf([])).to.equal('array')
 		expect(Type.typeOf([1, 2, 3])).to.equal('array')
