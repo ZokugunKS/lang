@@ -2,7 +2,7 @@
 
 extern {
 	sealed class Error
-
+	console
 	describe:	func
 	it:			func
 	setTimeout:	func
@@ -282,8 +282,8 @@ describe('function', func() {
 			let source = Type.isFunction:Function.toSource().replace(/[\t\r\n]/g, '')
 
 			// when webpack's mode is `development`
-			if(/\/\//.test(source)) {
-				expect(source).to.equal('function(item) { // {{{return typeof item === \'function\';}')
+			if /^function\(item\)/.test(source) {
+				expect(source).to.equal('function(item) { return typeof item === \'function\';}')
 			}
 			// when using istanbul
 			else if(/\_\_cov\_/.test(source)) {

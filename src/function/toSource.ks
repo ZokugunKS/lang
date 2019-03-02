@@ -4,6 +4,10 @@ include {
 	'../toSource'
 }
 
+const COMMENTS_REGEX = /((?:\/\/[^\r\n\\]*$)|(?:\/\*[^\\]*?\*\/))/mg
+const FUNCTION_REGEX = /^function\s*(?:\w*)\(([^\)]*)\)\s*([\s\S]+)$/m
+const NEWLINE_REGEX = /[\r\n]+/g
+
 impl Function {
 	/**[md.zot]**api**
 	Returns the representation of the function as javascript source.
@@ -15,14 +19,13 @@ impl Function {
 		{{:dokka.get('mocha', 'function instance toSource').code()}}
 	**/
 	toSource(): String {
-		let src = this.toString().replace(/^function (?:\w*)\(/, 'function(')
+		const src = this.toString().replace(COMMENTS_REGEX, '')
 
-		let regex = /^function\((?:([\r\n]*|\/\*(?:[^*]|(?:\*+[^\*\/]))*\*+\/)|[\w\t, ])*\)/gim
-		let info
-		while (info ?= regex.exec(src)) && info[1]? {
-			src = src.replace(info[1], '')
+		if match ?= FUNCTION_REGEX.exec(src) {
+			return `function(\(match[1].replace(NEWLINE_REGEX, ''))) \(match[2])`
 		}
-
-		return src
+		else {
+			return src
+		}
 	}
 }
