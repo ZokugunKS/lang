@@ -2,7 +2,7 @@
 
 extern {
 	sealed class Error
-	console
+
 	describe:	func
 	it:			func
 	setTimeout:	func
@@ -11,7 +11,7 @@ extern {
 import {
 	'@kaoscript/runtime'	for Type
 	'chai'					for expect
-	'../index.ks'
+	'..'
 }
 
 describe('function', func() {
@@ -294,6 +294,7 @@ describe('function', func() {
 			}
 		}) // }}}
 
+		#[error(off)]
 		it('try', func() { // {{{
 			expect((func() {
 				return 'hello'
@@ -351,6 +352,7 @@ describe('function', func() {
 			expect(c).to.equal(8)
 		}) // }}}
 
+		#[error(off)]
 		it('try :val', func() { // {{{
 			expect(Function.try(func() {
 				throw new Error()
@@ -359,6 +361,7 @@ describe('function', func() {
 			})).to.equal('hello')
 		}) // }}}
 
+		#[error(off)]
 		it('try :null', func() { // {{{
 			expect(Function.try(func() {
 				throw new Error()

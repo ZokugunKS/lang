@@ -1,4 +1,6 @@
-require|extern sealed namespace Math {
+require|extern sealed namespace Math
+
+disclose Math {
 	E: Number
 	LN2: Number
 	LN10: Number
@@ -7,7 +9,7 @@ require|extern sealed namespace Math {
 	PI: Number
 	SQRT1_2: Number
 	SQRT2: Number
-	
+
 	abs(...): Number
 	acos(...): Number
 	acosh(...): Number

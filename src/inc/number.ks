@@ -1,4 +1,6 @@
-require|extern sealed class Number {
+require|extern sealed class Number
+
+disclose Number {
 	toString(): String
 }
 

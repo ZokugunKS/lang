@@ -1,4 +1,6 @@
-require|extern sealed class RegExp {
+require|extern sealed class RegExp
+
+disclose RegExp {
 	exec(...): Array<String?>?
 	test(...): Boolean
 }

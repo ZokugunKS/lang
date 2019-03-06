@@ -8,7 +8,7 @@ extern {
 
 import {
 	'chai'			for expect
-	'../index.ks'
+	'..'
 }
 
 describe('decisions', func() {

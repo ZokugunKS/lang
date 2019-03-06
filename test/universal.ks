@@ -7,7 +7,7 @@ extern {
 
 import {
 	'chai'			for expect
-	'../index.ks'
+	'..'
 }
 
 describe('universal', func() {
@@ -16,31 +16,31 @@ describe('universal', func() {
 		let a2 = clone(a1)
 		expect(a1 == a2).to.be.false
 		expect(a1).to.eql(a2)
-		
+
 		let o1 = {
 			name: 'White'
 		}
 		let o2 = clone(o1)
 		expect(o1 == o2).to.be.false
 		expect(o1).to.eql(o2)
-		
+
 		expect(clone(null)).to.equal(null)
 	}) // }}}
-	
+
 	it('copy', func() { // {{{
 		a = null
 		b = copy(a)
 		expect(a == b).to.be.true
-		
+
 		a = 1
 		b = copy(a)
 		expect(a == b).to.be.true
-		
+
 		a = [1, 2, 3]
 		b = copy(a)
 		expect(a == b).to.be.false
 		expect(a).to.eql(b)
-		
+
 		a = {
 			name: 'White'
 		}
@@ -48,7 +48,7 @@ describe('universal', func() {
 		expect(a == b).to.be.false
 		expect(a).to.eql(b)
 	}) // }}}
-	
+
 	it('equals', func() { // {{{
 		// true
 		expect(equals([1, 2, 3], [1, 2, 3])).to.be.true
@@ -57,7 +57,7 @@ describe('universal', func() {
 		}, {
 			name: 'White'
 		})).to.be.true
-		
+
 		// false
 		expect(equals([1, 2, 3], [1, 2, 3, 4])).to.be.false
 		expect(equals({
@@ -68,7 +68,7 @@ describe('universal', func() {
 		})).to.be.false
 		expect(equals(1, 2)).to.be.false
 	}) // }}}
-	
+
 	it('toSource', func() { // {{{
 		expect(toSource([])).to.equal('[]')
 		expect(toSource([1, 2, 3])).to.equal('[1,2,3]')
@@ -83,7 +83,7 @@ describe('universal', func() {
 		expect(toSource({
 			hello: 'world'
 		})).to.equal('{"hello":\'world\'}')
-		
+
 		expect(toSource('http://www.zokugun.org')).to.equal('\'http://www.zokugun.org\'')
 	}) // }}}
 })

@@ -7,7 +7,7 @@ extern {
 
 import {
 	'chai'			for expect
-	'../index.ks'
+	'..'
 }
 
 describe('math', func() {

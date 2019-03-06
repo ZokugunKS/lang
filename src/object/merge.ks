@@ -1,12 +1,15 @@
 include {
 	'../inc/object'
-	
+
 	'../clone'
 }
 
 const $merge = {
-	merge(source, key, value) { // {{{
-		if value is Array {
+	merge(source, key, value = null) { // {{{
+		if value == null {
+			return source
+		}
+		else if value is Array {
 			source[key] = (value as Array).clone()
 		}
 		else if value is Object {
@@ -20,6 +23,7 @@ const $merge = {
 		else {
 			source[key] = value
 		}
+
 		return source
 	} // }}}
 	object(source, current) { // {{{
@@ -37,13 +41,13 @@ const $merge = {
 impl Object {
 	/**[md.zot]**api**
 	Returns the *object* after it was deeply merged with all the arguments.
-	
+
 	@function merge
 	@param	{object}	object	The object
 	@param	{object}	[...]	The objects to merge
 	@return {object}
 	@static
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'object merge :default').code()}}
 	**/
@@ -54,7 +58,7 @@ impl Object {
 		while i < l && !(source ?= args[i]) {
 			i++
 		}
-		
+
 		while(++i < l) {
 			if args[i] is Object {
 				for key of args[i] {
@@ -62,7 +66,7 @@ impl Object {
 				}
 			}
 		}
-		
+
 		return source
 	}
 }
