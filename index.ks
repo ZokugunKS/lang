@@ -1,6 +1,6 @@
 /**
  * index.ks
- * Version 0.3.0
+ * Version 0.4.0
  * November 12th, 2016
  *
  * Copyright (c) 2016 Baptiste Augrain

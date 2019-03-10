@@ -1,8 +1,8 @@
 include {
-	'./array/toSource'
-	'./function/toSource'
-	'./object/toSource'
-	
+	'./array/_toSource'
+	'./function/_toSource'
+	'./object/_toSource'
+
 	'./string/replaceAll'
 }
 

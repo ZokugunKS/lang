@@ -1,6 +1,6 @@
 include {
-	'./array/equals'
-	'./object/equals'
+	'./array/_equals'
+	'./object/_equals'
 }
 
 /**[md.zot]**api**
