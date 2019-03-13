@@ -15,6 +15,9 @@ module.exports = [
 		},
 		performance: {
 			hints: false
+		},
+		resolve: {
+			extensions: ['.ks', '.json', '.js']
 		}
 	}
 ];

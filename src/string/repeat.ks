@@ -1,30 +1,36 @@
 include '../inc/string'
 
+#[if(any(trident, safari-v8))]
 impl String {
 	/**[md.zot]**api**
-	Returns a string compose of the string repated *n* times.
-	
+	Returns a string compose of the string repated *count* times.
+
 	@function repeat
-	@param	{number} 	n	N times
+	@param	{number} 	count 	The number of times to repeat the string
 	@return {string}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'string instance repeat').code()}}
 	**/
-	repeat(n): String {
+	repeat(count: Number): String {
 		let result = ''
 		let pattern = this
-		
-		while n > 0  {
-			if n & 1 {
+
+		while count > 0  {
+			if count & 1 {
 				result += pattern
 			}
-			
-			n >>= 1
-			
+
+			count >>= 1
+
 			pattern += pattern
 		}
-		
+
 		return result
 	}
+}
+
+#[else]
+disclose String {
+	repeat(count: Number): String
 }

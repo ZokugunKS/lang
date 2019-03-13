@@ -200,6 +200,12 @@ describe('string', func() {
 		it('endsWith', func() { // {{{
 			expect('miss White'.endsWith('te')).to.be.true
 			expect('miss White'.endsWith('ta')).to.be.false
+
+			const str = 'To be, or not to be, that is the question.'
+
+			expect(str.endsWith('question.')).to.be.true
+			expect(str.endsWith('to be')).to.be.false
+			expect(str.endsWith('to be', 19)).to.be.true
 		}) // }}}
 
 		it('escapeRegex', func() { // {{{
@@ -245,6 +251,16 @@ describe('string', func() {
 			expect('miss white'.humanize()).to.equal('miss white')
 			expect('miss_white'.humanize()).to.equal('miss white')
 			expect('miss-white'.humanize()).to.equal('miss white')
+		}) // }}}
+
+		it('includes', func() { // {{{
+			const str = 'To be, or not to be, that is the question.'
+
+			expect(str.includes('To be')).to.be.true
+			expect(str.includes('question')).to.be.true
+			expect(str.includes('nonexistent')).to.be.false
+			expect(str.includes('To be', 1)).to.be.false
+			expect(str.includes('TO BE')).to.be.false
 		}) // }}}
 
 		it('indexOfRegex :default', func() { // {{{

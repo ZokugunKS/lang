@@ -77,6 +77,9 @@ module.exports = function(config) {
 				},
 				performance: {
 					hints: false
+				},
+				resolve: {
+					extensions: ['.ks', '.json', '.js']
 				}
 			}
 		],

@@ -164,6 +164,7 @@ include {
 	'./src/string/evaluate'
 	'./src/string/extract'
 	'./src/string/humanize'
+	'./src/string/includes'
 	'./src/string/indexOfRegex'
 	'./src/string/isBoolean'
 	'./src/string/left'
