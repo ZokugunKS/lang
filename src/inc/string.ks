@@ -13,6 +13,7 @@ disclose String {
 	search(regexp: RegExp): Number
 	slice(beginIndex: Number, endIndex: Number = -1): String
 	split(separator: RegExp | String = null, limit: Number = -1): Array<String>
+	substr(start: Number, length: Number = -1): String
 	substring(indexStart: Number, indexEnd: Number = -1): String
 	toLowerCase(): String
 	toString(): String
