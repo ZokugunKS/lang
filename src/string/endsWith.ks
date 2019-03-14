@@ -1,6 +1,6 @@
 include '../inc/string'
 
-#[if(any(trident, safari-v8))]
+#[if(any(jsc-v8, trident))]
 impl String {
 	/**[md.zot]**api**
 	Returns *true* if the string ends with the *value*, *false* if not.

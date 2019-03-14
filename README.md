@@ -1,5 +1,5 @@
 [@zokugun/lang](https://github.com/ZokugunKS/lang)
-=================================================================
+==================================================
 
 [![kaoscript](https://img.shields.io/badge/language-kaoscript-orange.svg)](https://github.com/kaoscript/kaoscript)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
@@ -13,7 +13,7 @@
 Provide basics methods for Array, Function, Number, Object and String
 
 Compatibility
----------------------
+-------------
 
 | ![Chrome][chrome]      | ![Edge][edge]          | ![Firefox][firefox]    | ![IE][ie]              | ![Safari][safari]      | ![Android][android]      | ![iOS][ios]               | ![Node.js][nodejs]        |
 |------------------------|------------------------|------------------------|------------------------|------------------------|--------------------------|---------------------------|---------------------------|
@@ -21,6 +21,24 @@ Compatibility
 | :heavy_check_mark: 40  | :heavy_check_mark: 13  | :heavy_check_mark: 47  | :heavy_check_mark: 9*   | :heavy_check_mark: 8   | :heavy_check_mark: 4.4   | :heavy_check_mark: 9      | :heavy_check_mark: 4.5*      |
 
 \* tested manually due to limitation of automated testing tools
+
+
+Polyfill
+--------
+
+Here an example how a polyfill is defined:
+
+```kaoscript
+#[if(any(lt(chakra-v1.3), lt(ecma-v8), lt(jsc-v10), lt(monkey-v48), trident, lt(v8-v5.7)))]
+impl String {
+	padStart(targetLength: Number, pad: String = ' '): String => pad.repeat(targetLength - this.length) + this
+}
+
+#[else]
+disclose String {
+	padStart(targetLength: Number, pad: String = ' '): String
+}
+```
 
 License
 -------

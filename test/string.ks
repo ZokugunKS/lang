@@ -299,16 +299,6 @@ describe('string', func() {
 			expect(''.lines()).to.eql([])
 		}) // }}}
 
-		it('lpad', func() { // {{{
-			expect('miss'.lpad(6)).to.equal('  miss')
-
-			expect('10'.lpad(3, '0')).to.equal('010')
-		}) // }}}
-
-		it('ltrim', func() { // {{{
-			expect('  miss'.ltrim()).to.equal('miss')
-		}) // }}}
-
 		it('matchPair :default', func() { // {{{
 			expect('--((hello)(world))--'.matchPair('(', ')')).to.eql({
 				before: '--',
@@ -321,6 +311,18 @@ describe('string', func() {
 
 		it('matchPair :nf', func() { // {{{
 			expect('--'.matchPair('(', ')')).to.be.false
+		}) // }}}
+
+		it('padEnd', func() { // {{{
+			expect('miss'.padEnd(6)).to.equal('miss  ')
+
+			expect('10'.padEnd(3, '0')).to.equal('100')
+		}) // }}}
+
+		it('padStart', func() { // {{{
+			expect('miss'.padStart(6)).to.equal('  miss')
+
+			expect('10'.padStart(3, '0')).to.equal('010')
 		}) // }}}
 
 		it('prepend wo/separator wo/null', func() { // {{{
@@ -388,22 +390,12 @@ describe('string', func() {
 			expect('miss White'.right(-4)).to.equal(' White')
 		}) // }}}
 
-		it('rpad', func() { // {{{
-			expect('miss'.rpad(6)).to.equal('miss  ')
-
-			expect('10'.rpad(3, '0')).to.equal('100')
-		}) // }}}
-
 		it('rtake :default', func() { // {{{
 			expect('miss White'.rtake()).to.equal('e')
 		}) // }}}
 
 		it('rtake :5', func() { // {{{
 			expect('miss White'.rtake(5)).to.equal('White')
-		}) // }}}
-
-		it('rtrim', func() { // {{{
-			expect('miss  '.rtrim()).to.equal('miss')
 		}) // }}}
 
 		it('substitute :default', func() { // {{{
@@ -476,6 +468,14 @@ describe('string', func() {
 
 		it('trim', func() { // {{{
 			expect('  miss  '.trim()).to.equal('miss')
+		}) // }}}
+
+		it('trimEnd', func() { // {{{
+			expect('miss  '.trimEnd()).to.equal('miss')
+		}) // }}}
+
+		it('trimStart', func() { // {{{
+			expect('  miss'.trimStart()).to.equal('miss')
 		}) // }}}
 
 		it('underscorify', func() { // {{{

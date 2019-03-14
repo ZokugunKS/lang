@@ -1,6 +1,6 @@
 include '../inc/string'
 
-#[if(any(trident, safari-v8))]
+#[if(any(jsc-v8, trident))]
 impl String {
 	/**[md]**api**
 	Returns *true* if `search` is found within the string.
