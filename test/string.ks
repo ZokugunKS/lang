@@ -146,9 +146,9 @@ describe('string', func() {
 			expect('miss White'.capitalize()).to.equal('Miss white')
 		}) // }}}
 
-		it('capitalizeSameAs', func() { // {{{
-			expect('he'.capitalizeSameAs('she')).to.equal('he')
-			expect('he'.capitalizeSameAs('She')).to.equal('He')
+		it('capitalizeLike', func() { // {{{
+			expect('he'.capitalizeLike('she')).to.equal('he')
+			expect('he'.capitalizeLike('She')).to.equal('He')
 		}) // }}}
 
 		it('capitalizeWords', func() { // {{{
@@ -297,10 +297,6 @@ describe('string', func() {
 			expect('miss\n\n\nwhite'.lines(true)).to.eql(['miss', '', '', 'white'])
 
 			expect(''.lines()).to.eql([])
-		}) // }}}
-
-		it('lowerFirst', func() { // {{{
-			expect('Miss White'.lowerFirst()).to.equal('miss White')
 		}) // }}}
 
 		it('lpad', func() { // {{{
@@ -460,6 +456,14 @@ describe('string', func() {
 			expect('on'.toBoolean()).to.be.true
 		}) // }}}
 
+		it('toFirstLowerCase', func() { // {{{
+			expect('Miss White'.toFirstLowerCase()).to.equal('miss White')
+		}) // }}}
+
+		it('toFirstUpperCase', func() { // {{{
+			expect('miss White'.toFirstUpperCase()).to.equal('Miss White')
+		}) // }}}
+
 		it('toFloat', func() { // {{{
 			expect('3.14'.toFloat()).to.equal(3.14)
 		}) // }}}
@@ -479,10 +483,6 @@ describe('string', func() {
 			expect('miss white'.underscorify()).to.equal('miss_white')
 			expect('miss_white'.underscorify()).to.equal('miss_white')
 			expect('miss-white'.underscorify()).to.equal('miss_white')
-		}) // }}}
-
-		it('upperFirst', func() { // {{{
-			expect('miss White'.upperFirst()).to.equal('Miss White')
 		}) // }}}
 
 		it('unquote :double', func() { // {{{
