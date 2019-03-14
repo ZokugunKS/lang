@@ -146,9 +146,7 @@ include {
 	'./src/regexp/clone'
 	'./src/regexp/length'
 
-	'./src/string/after'
 	'./src/string/append'
-	'./src/string/before'
 	'./src/string/camelize'
 	'./src/string/capitalize'
 	'./src/string/capitalizeLike'
@@ -181,6 +179,8 @@ include {
 	'./src/string/rtake'
 	'./src/string/startsWith'
 	'./src/string/substitute'
+	'./src/string/substringAfter'
+	'./src/string/substringBefore'
 	'./src/string/take'
 	'./src/string/test'
 	'./src/string/toBoolean'

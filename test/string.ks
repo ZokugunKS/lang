@@ -12,58 +12,6 @@ import {
 
 describe('string', func() {
 	describe('instance', func() {
-		it('after w/string:default', func() { // {{{
-			expect('How are you doing miss White?'.after(' ')).to.equal('are you doing miss White?')
-		}) // }}}
-
-		it('after w/string:true', func() { // {{{
-			expect('How are you doing miss White?'.after(' ', true)).to.equal('White?')
-		}) // }}}
-
-		it('after w/string:3', func() { // {{{
-			expect('How are you doing miss White?'.after(' ', 3)).to.equal('doing miss White?')
-		}) // }}}
-
-		it('after w/string:-2', func() { // {{{
-			expect('How are you doing miss White?'.after(' ', -2)).to.equal('miss White?')
-		}) // }}}
-
-		it('after w/string:break', func() { // {{{
-			expect('miss White?'.after(' ', -3)).to.equal('')
-		}) // }}}
-
-		it('after w/string:10', func() { // {{{
-			expect('How are you doing miss White?'.after(' ', 10)).to.equal('')
-		}) // }}}
-
-		it('after w/regex:default', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/)).to.equal('are you doing miss White?')
-		}) // }}}
-
-		it('after w/regex:true', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/, true)).to.equal('White?')
-		}) // }}}
-
-		it('after w/regex:3', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/, 3)).to.equal('doing miss White?')
-		}) // }}}
-
-		it('after w/regex:-2', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/, -2)).to.equal('miss White?')
-		}) // }}}
-
-		it('after w/regex:10', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/, 10)).to.equal('')
-		}) // }}}
-
-		it('after w/regex:g', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/g, 3)).to.equal('doing miss White?')
-		}) // }}}
-
-		it('after w/regex:im', func() { // {{{
-			expect('How are you doing miss White?'.after(/\s+/im, 3)).to.equal('doing miss White?')
-		}) // }}}
-
 		it('append wo/separator wo/null', func() { // {{{
 			expect('foo'.append('bar')).to.equal('foobar')
 		}) // }}}
@@ -82,58 +30,6 @@ describe('string', func() {
 
 		it('append empty', func() { // {{{
 			expect(''.append('bar')).to.equal('bar')
-		}) // }}}
-
-		it('before w/string:default', func() { // {{{
-			expect('How are you doing miss White?'.before(' ')).to.equal('How')
-		}) // }}}
-
-		it('before w/string:true', func() { // {{{
-			expect('How are you doing miss White?'.before(' ', true)).to.equal('How are you doing miss')
-		}) // }}}
-
-		it('before w/string:3', func() { // {{{
-			expect('How are you doing miss White?'.before(' ', 3)).to.equal('How are you')
-		}) // }}}
-
-		it('before w/string:-2', func() { // {{{
-			expect('How are you doing miss White?'.before(' ', -2)).to.equal('How are you doing')
-		}) // }}}
-
-		it('before w/string:break', func() { // {{{
-			expect('miss White?'.before(' ', -3)).to.equal('')
-		}) // }}}
-
-		it('before w/string:10', func() { // {{{
-			expect('How are you doing miss White?'.before(' ', 10)).to.equal('')
-		}) // }}}
-
-		it('before w/regex:default', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/)).to.equal('How')
-		}) // }}}
-
-		it('before w/regex:true', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/, true)).to.equal('How are you doing miss')
-		}) // }}}
-
-		it('before w/regex:3', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/, 3)).to.equal('How are you')
-		}) // }}}
-
-		it('before w/regex:-2', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/, -2)).to.equal('How are you doing')
-		}) // }}}
-
-		it('before w/regex:10', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/, 10)).to.equal('')
-		}) // }}}
-
-		it('before w/regex:g', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/g, 3)).to.equal('How are you')
-		}) // }}}
-
-		it('before w/regex:im', func() { // {{{
-			expect('How are you doing miss White?'.before(/\s+/im, 3)).to.equal('How are you')
 		}) // }}}
 
 		it('camelize', func() { // {{{
@@ -416,6 +312,110 @@ describe('string', func() {
 			expect('{honorific} {name}'.substitute({
 				name: 'White'
 			})).to.equal(' White')
+		}) // }}}
+
+		it('substringAfter w/string:default', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(' ')).to.equal('are you doing miss White?')
+		}) // }}}
+
+		it('substringAfter w/string:true', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(' ', true)).to.equal('White?')
+		}) // }}}
+
+		it('substringAfter w/string:3', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(' ', 3)).to.equal('doing miss White?')
+		}) // }}}
+
+		it('substringAfter w/string:-2', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(' ', -2)).to.equal('miss White?')
+		}) // }}}
+
+		it('substringAfter w/string:break', func() { // {{{
+			expect('miss White?'.substringAfter(' ', -3)).to.equal('')
+		}) // }}}
+
+		it('substringAfter w/string:10', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(' ', 10)).to.equal('')
+		}) // }}}
+
+		it('substringAfter w/regex:default', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/)).to.equal('are you doing miss White?')
+		}) // }}}
+
+		it('substringAfter w/regex:true', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/, true)).to.equal('White?')
+		}) // }}}
+
+		it('substringAfter w/regex:3', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/, 3)).to.equal('doing miss White?')
+		}) // }}}
+
+		it('substringAfter w/regex:-2', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/, -2)).to.equal('miss White?')
+		}) // }}}
+
+		it('substringAfter w/regex:10', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/, 10)).to.equal('')
+		}) // }}}
+
+		it('substringAfter w/regex:g', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/g, 3)).to.equal('doing miss White?')
+		}) // }}}
+
+		it('substringAfter w/regex:im', func() { // {{{
+			expect('How are you doing miss White?'.substringAfter(/\s+/im, 3)).to.equal('doing miss White?')
+		}) // }}}
+
+		it('substringBefore w/string:default', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(' ')).to.equal('How')
+		}) // }}}
+
+		it('substringBefore w/string:true', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(' ', true)).to.equal('How are you doing miss')
+		}) // }}}
+
+		it('substringBefore w/string:3', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(' ', 3)).to.equal('How are you')
+		}) // }}}
+
+		it('substringBefore w/string:-2', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(' ', -2)).to.equal('How are you doing')
+		}) // }}}
+
+		it('substringBefore w/string:break', func() { // {{{
+			expect('miss White?'.substringBefore(' ', -3)).to.equal('')
+		}) // }}}
+
+		it('substringBefore w/string:10', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(' ', 10)).to.equal('')
+		}) // }}}
+
+		it('substringBefore w/regex:default', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/)).to.equal('How')
+		}) // }}}
+
+		it('substringBefore w/regex:true', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/, true)).to.equal('How are you doing miss')
+		}) // }}}
+
+		it('substringBefore w/regex:3', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/, 3)).to.equal('How are you')
+		}) // }}}
+
+		it('substringBefore w/regex:-2', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/, -2)).to.equal('How are you doing')
+		}) // }}}
+
+		it('substringBefore w/regex:10', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/, 10)).to.equal('')
+		}) // }}}
+
+		it('substringBefore w/regex:g', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/g, 3)).to.equal('How are you')
+		}) // }}}
+
+		it('substringBefore w/regex:im', func() { // {{{
+			expect('How are you doing miss White?'.substringBefore(/\s+/im, 3)).to.equal('How are you')
 		}) // }}}
 
 		it('startsWith', func() { // {{{
