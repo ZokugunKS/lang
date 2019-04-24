@@ -1,3 +1,5 @@
-require|extern sealed class Array
+require|extern sealed class Array {
+	length: Number
+}
 
 export Array
