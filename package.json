@@ -36,7 +36,7 @@
 		"@zokugun/istanbul.cover.cmd.mocha": "^0.4.0",
 		"@zokugun/istanbul.reporter.minimap": "^0.5.0",
 		"chai": "^4.2.0",
-		"coveralls": "^3.0.3",
+		"coveralls": "^3.0.4",
 		"istanbul": "^0.4.5",
 		"kaoscript": "github:kaoscript/kaoscript",
 		"karma": "^4.1.0",
@@ -48,7 +48,7 @@
 		"karma-safari-launcher": "^1.0.0",
 		"karma-webpack": "^3.0.5",
 		"mocha": "^5.2.0",
-		"webpack": "^4.30.0",
+		"webpack": "^4.34.0",
 		"webpack-cli": "3.2.3"
 	},
 	"peerDependencies": {

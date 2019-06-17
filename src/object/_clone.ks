@@ -24,7 +24,7 @@ impl Object {
 
 		let result = {}
 
-		for key, value of item {
+		for const value, key of item {
 			result[key] = clone(value)
 		}
 

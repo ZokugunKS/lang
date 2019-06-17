@@ -27,7 +27,7 @@ const $merge = {
 		return source
 	} // }}}
 	object(source, current) { // {{{
-		for key of current {
+		for const :key of current {
 			if source[key] {
 				$merge.merge(source, key, current[key])
 			}
@@ -51,7 +51,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object merge :default').code()}}
 	**/
-	static merge(...args): Number {
+	static merge(...args): Object {
 		let source
 		let i = 0
 		let l = args.length
@@ -59,9 +59,9 @@ impl Object {
 			i++
 		}
 
-		while(++i < l) {
+		while ++i < l {
 			if args[i] is Object {
-				for key of args[i] {
+				for const :key of args[i] {
 					$merge.merge(source, key, args[i][key])
 				}
 			}

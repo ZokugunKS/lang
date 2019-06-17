@@ -17,7 +17,7 @@ impl Object {
 	static toSource(item): String { // {{{
 		let sources = []
 
-		for key, value of item when item.hasOwnProperty(key) {
+		for const value, key of item when item.hasOwnProperty(key) {
 			sources.push('"' + key + '":' + toSource(value))
 		}
 
