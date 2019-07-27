@@ -13,10 +13,16 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance equals :true').code()}}
 	**/
-	equals(item): Boolean {
-		return true if this == item
-
-		return false if item is not Array || this.length != item.length
+	equals(item?): Boolean {
+		if item == null {
+			return false
+		}
+		else if this == item {
+			return true
+		}
+		else if item is not Array || this.length != item.length {
+			return false
+		}
 
 		for value, index in this when value != item[index] {
 			if value is Array {

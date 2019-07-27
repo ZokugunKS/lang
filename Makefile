@@ -19,6 +19,6 @@ ktest:
 	npx karma start karma.conf-debug.js
 
 clean:
-	find -L . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -exec rm {} \;
+	npx kaoscript --clean
 
 .PHONY: test coverage

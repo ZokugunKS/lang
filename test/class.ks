@@ -16,6 +16,7 @@ import {
 describe('class', func() {
 	it('basics', func() { // {{{
 		class Greetings {
+			public message: String
 			constructor(message) {
 				this.message = message
 			}
@@ -78,6 +79,10 @@ describe('class', func() {
 
 	it('static', func() { // {{{
 		class Shape {
+			public {
+				type
+				color
+			}
 			static {
 				makeRectangle(color) => new Shape('rectangle', color)
 			}

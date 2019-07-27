@@ -52,7 +52,8 @@ impl Object {
 		{{:dokka.get('mocha', 'object merge :default').code()}}
 	**/
 	static merge(...args): Object {
-		let source
+		let source = {}
+
 		let i = 0
 		let l = args.length
 		while i < l && !(source ?= args[i]) {

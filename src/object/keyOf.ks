@@ -13,7 +13,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object keyOf').code()}}
 	**/
-	static keyOf(item, value): String {
+	static keyOf(item, value): String? {
 		for const :key of item {
 			if item.hasOwnProperty(key) && item[key] == value {
 				return key

@@ -13,7 +13,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object keyAt').code()}}
 	**/
-	static keyAt(item, index): String {
+	static keyAt(item, index): String? {
 		let i = -1
 		for const :key of item {
 			if item.hasOwnProperty(key) && ++i == index {

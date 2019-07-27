@@ -15,7 +15,7 @@ Returns *true* if *one* is softly equals to *two*, *false* if it's not.
 @example basics
 	{{:dokka.get('mocha', 'universal equals').code()}}
 **/
-export func equals(itemA?, itemB?) { // {{{
+export func equals(itemA!?, itemB!?) { // {{{
 	if itemA == itemB {
 		return true
 	}
@@ -23,7 +23,7 @@ export func equals(itemA?, itemB?) { // {{{
 		return false
 	}
 	else if itemA is Array {
-		return itemA:Array.equals(itemB)
+		return itemA.equals(itemB)
 	}
 	else if itemA is Object {
 		return Object.equals(itemA, itemB)
