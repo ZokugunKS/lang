@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/lang",
 	"description": "Provide basics methods for Array, Function, Number, Object and String",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
@@ -23,7 +23,7 @@
 	],
 	"files": [
 		"index.ks",
-		"src"
+		"src/**/*.ks"
 	],
 	"dependencies": {},
 	"devDependencies": {
