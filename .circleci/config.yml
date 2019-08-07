@@ -20,4 +20,3 @@ jobs:
           key: dependencies-{{ checksum "package-lock.json" }}
 
       - run: npm run test-mocha
-      - run: npm run test-karma-es6-ci

@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/lang",
 	"description": "Provide basics methods for Array, Function, Number, Object and String",
-	"version": "0.4.0",
+	"version": "0.3.0",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
@@ -27,9 +27,9 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@kaoscript/coverage-istanbul": "github:kaoscript/coverage-istanbul",
-		"@kaoscript/runtime": "github:kaoscript/runtime",
-		"@kaoscript/target-commons": "github:kaoscript/target-commons",
+		"@kaoscript/coverage-istanbul": "^0.2.0",
+		"@kaoscript/runtime": "^0.6.1",
+		"@kaoscript/target-commons": "^0.2.0",
 		"@kaoscript/webpack-loader": "^0.3.0",
 		"@mocha/karma-sauce-launcher": "^2.1.0",
 		"@zokugun/istanbul.cover": "^0.5.0",
@@ -38,7 +38,7 @@
 		"chai": "^4.2.0",
 		"coveralls": "^3.0.5",
 		"istanbul": "^0.4.5",
-		"kaoscript": "github:kaoscript/kaoscript",
+		"kaoscript": "^0.9.1",
 		"karma": "^4.2.0",
 		"karma-chai": "^0.1.0",
 		"karma-chrome-launcher": "^2.2.0",
@@ -48,7 +48,7 @@
 		"karma-safari-launcher": "^1.0.0",
 		"karma-webpack": "^3.0.5",
 		"mocha": "^5.2.0",
-		"webpack": "^4.39.0",
+		"webpack": "^4.39.1",
 		"webpack-cli": "3.2.3"
 	},
 	"peerDependencies": {
