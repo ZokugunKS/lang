@@ -27,7 +27,7 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@kaoscript/coverage-istanbul": "^0.2.0",
+		"@kaoscript/coverage-istanbul": "^0.2.1",
 		"@kaoscript/runtime": "^0.6.1",
 		"@kaoscript/target-commons": "^0.2.0",
 		"@kaoscript/webpack-loader": "^0.3.0",
