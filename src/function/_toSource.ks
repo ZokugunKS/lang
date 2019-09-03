@@ -19,8 +19,8 @@ impl Function {
 	toSource(): String {
 		const src = this.toString().replace(COMMENTS_REGEX, '')
 
-		if match ?= FUNCTION_REGEX.exec(src) {
-			return `function(\(match[1].replace(NEWLINE_REGEX, ''))) \(match[2])`
+		if const match = FUNCTION_REGEX.exec(src) {
+			return `function(\(match[1]!?.replace(NEWLINE_REGEX, ''))) \(match[2])`
 		}
 		else {
 			return src

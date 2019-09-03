@@ -1,8 +1,6 @@
 #![bin]
 
 extern {
-	sealed class Error
-
 	describe:	func
 	it:			func
 	setTimeout:	func

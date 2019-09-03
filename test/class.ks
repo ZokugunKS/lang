@@ -2,8 +2,6 @@
 #![error(ignore(Error))]
 
 extern {
-	sealed class Error
-
 	describe:	func
 	it:			func
 }

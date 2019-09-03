@@ -12,12 +12,15 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object isEmpty').code()}}
 	**/
-	static isEmpty(item): Boolean {
-		for const :key of item {
-			if item.hasOwnProperty(key) {
-				return false
+	static isEmpty(item?): Boolean {
+		if item != null {
+			for const :key of item {
+				if item.hasOwnProperty(key) {
+					return false
+				}
 			}
 		}
+
 		return true
 	}
 }

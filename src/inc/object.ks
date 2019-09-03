@@ -2,7 +2,8 @@ require|extern sealed class Object
 
 #[rules(non-exhaustive)]
 disclose Object {
-	static keys(obj): Array<String>
+	static keys(obj: Object): Array<String>
+	toString(): String
 }
 
 export Object

@@ -11,6 +11,7 @@ include {
 	'./src/inc/array'
 	'./src/inc/boolean'
 	'./src/inc/date'
+	'./src/inc/error'
 	'./src/inc/function'
 	'./src/inc/json'
 	'./src/inc/number'

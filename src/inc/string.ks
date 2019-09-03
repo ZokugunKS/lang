@@ -1,3 +1,5 @@
+include './regexp'
+
 require|extern sealed class String
 
 disclose String {
@@ -8,7 +10,7 @@ disclose String {
 	fromCharCode(...numbers: Array<Number>): String
 	indexOf(search: String, fromIndex: Number = 0): Number
 	lastIndexOf(search: String, fromIndex: Number = 0): Number
-	match(regexp: RegExp): Array?
+	match(regexp: RegExp): RegExpExecArray?
 	replace(pattern: RegExp | String, replacement: Function | String): String
 	search(regexp: RegExp): Number
 	slice(beginIndex: Number, endIndex: Number = -1): String

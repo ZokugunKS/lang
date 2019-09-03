@@ -3,18 +3,18 @@ include '../inc/array'
 impl Array {
 	/**[md.zot]**api**
 	Return an array from the value
-	
+
 	@class Array
 	@function from
 	@param	{any}	value	The value to cast
 	@return {array}
 	@static
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array class from :def').code()}}
 	**/
 	static from(item = null): Array {
-		if !?item {
+		if item == null {
 			return []
 		}
 		else if Type.isEnumerable(item) && item is not String {
