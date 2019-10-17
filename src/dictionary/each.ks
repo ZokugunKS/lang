@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Execute the function *fn* for all the properties of the *object*.
 
@@ -13,11 +13,9 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object each').code()}}
 	**/
-	static each(item, fn, bind = null) {
+	static each(item: Dictionary, fn: Function, bind = null) {
 		for const :key of item {
-			if item.hasOwnProperty(key) {
-				fn*$(bind, item[key], key, item)
-			}
+			fn*$(bind, item[key], key, item)
 		}
 	}
 }

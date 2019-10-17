@@ -1,6 +1,6 @@
 require|extern sealed class Date
 
-disclose date {
+disclose Date {
 	static now(): Number
 	static parse(date: String): Date
 	getDate(): Number

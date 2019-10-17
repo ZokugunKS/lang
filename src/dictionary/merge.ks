@@ -1,5 +1,5 @@
 include {
-	'../inc/object'
+	'../inc/dictionary'
 
 	'../clone'
 }
@@ -12,8 +12,8 @@ const $merge = {
 		else if value is Array {
 			source[key] = (value as Array).clone()
 		}
-		else if value is Object {
-			if source[key] is Object {
+		else if value is Dictionary {
+			if source[key] is Dictionary {
 				$merge.object(source[key], value)
 			}
 			else {
@@ -38,7 +38,7 @@ const $merge = {
 	} // }}}
 }
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns the *object* after it was deeply merged with all the arguments.
 
@@ -51,7 +51,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object merge :default').code()}}
 	**/
-	static merge(...args): Object {
+	static merge(...args): Dictionary {
 		let source = {}
 
 		let i = 0
@@ -61,7 +61,7 @@ impl Object {
 		}
 
 		while ++i < l {
-			if args[i] is Object {
+			if args[i] is Dictionary {
 				for const :key of args[i] {
 					$merge.merge(source, key, args[i][key])
 				}

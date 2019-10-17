@@ -28,7 +28,7 @@ impl String {
 			index = this.length
 			position = -position
 
-			for i from 1 til position {
+			for const i from 1 til position {
 				index = this.lastIndexOf(pattern, index)
 
 				if index != -1 {
@@ -46,7 +46,7 @@ impl String {
 		else {
 			index = 0
 
-			for i from 1 til position {
+			for const i from 1 til position {
 				index = this.indexOf(pattern, index)
 
 				if index != -1 {
@@ -69,47 +69,43 @@ impl String {
 			position = -1
 		}
 
-		let index = -1
-		let data = true
+		let index: Number = -1
 
-		if position == 1 {
-			data = pattern.exec(this)
-
-			index = data.index
+		if position == 0 || position == 1 {
+			if const data = pattern.exec(this) {
+				index = data.index
+			}
 		}
 		else {
 			pattern = pattern.global ? pattern : new RegExp(pattern.source, 'g' + (pattern.ignoreCase ? 'i' : '') + (pattern.multiline ? 'm' : ''))
 
 			if position < 0 {
-				let founds = []
-				while data = pattern.exec(this) {
+				let founds: Array = []
+
+				while const data = pattern.exec(this) {
 					founds.push(data)
 				}
 
-				if position == true {
-					if founds.length {
-						data = founds.last()
-
-						index = data.index
+				if position {
+					if founds.length != 0 {
+						index = founds.last().index
 					}
 				}
 				else {
-					let i = founds.length + position
+					const i = founds.length + position
 					if i >= 0 {
-						data = founds[i]
-
-						index = data.index
+						index = founds[i].index
 					}
 				}
 			}
 			else {
-				for i from 1 til position while data? {
-					data = pattern.exec(this)
+				for const i from 1 til position {
+					if data !?= pattern.exec(this) {
+						return missingValue
+					}
 				}
 
-				if data? {
-					data = pattern.exec(this)
-
+				if const data = pattern.exec(this) {
 					index = data.index
 				}
 			}

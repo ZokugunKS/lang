@@ -70,52 +70,45 @@ impl String {
 			position = -1
 		}
 
-		let index = -1
-		let data = true
+		let data: RegExpExecArray? = null
 
-		if position == 1 {
+		if position == 0 || position == 1 {
 			data = pattern.exec(this)
-
-			index = data.index
 		}
 		else {
 			pattern = pattern.global ? pattern : new RegExp(pattern.source, 'g' + (pattern.ignoreCase ? 'i' : '') + (pattern.multiline ? 'm' : ''))
 
 			if position < 0 {
-				let founds = []
-				while data = pattern.exec(this) {
+				const founds: Array<RegExpExecArray> = []
+
+				while const data = pattern.exec(this) {
 					founds.push(data)
 				}
 
-				if position == true {
-					if founds.length {
-						data = founds.last()
-
-						index = data.index
-					}
+				const index = founds.length + position
+				if index >= 0 {
+					data = founds[index]
 				}
 				else {
-					let i = founds.length + position
-					if i >= 0 {
-						data = founds[i]
-
-						index = data.index
-					}
+					return missingValue
 				}
 			}
 			else {
-				for i from 1 til position while data? {
-					data = pattern.exec(this)
+				for const i from 1 til position {
+					if !?pattern.exec(this) {
+						return missingValue
+					}
 				}
 
-				if data? {
-					data = pattern.exec(this)
-
-					index = data.index
-				}
+				data = pattern.exec(this)
 			}
 		}
 
-		return index != -1 ? this.slice(index + data[0].length) : missingValue
+		if data? {
+			return this.slice(data.index + data[0].length)
+		}
+		else {
+			return missingValue
+		}
 	} // }}}
 }

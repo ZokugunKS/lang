@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns the value a the given *index*
 

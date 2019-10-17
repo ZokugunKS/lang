@@ -1,6 +1,6 @@
 include {
 	'./array/copy'
-	'./object/copy'
+	'./dictionary/copy'
 }
 
 /**[md.zot]**api**
@@ -19,10 +19,10 @@ export func copy(value?) { // {{{
 		return null
 	}
 	else if value is Array {
-		return value:Array.copy()
+		return value.copy()
 	}
-	else if value is Object {
-		return Object.copy(value)
+	else if value is Dictionary {
+		return Dictionary.copy(value)
 	}
 	else {
 		return value

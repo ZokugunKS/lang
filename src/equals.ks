@@ -1,6 +1,9 @@
 include {
 	'./array/_equals'
+	'./date/_equals'
+	'./dictionary/_equals'
 	'./object/_equals'
+	'./regexp/_equals'
 }
 
 /**[md.zot]**api**
@@ -15,20 +18,11 @@ Returns *true* if *one* is softly equals to *two*, *false* if it's not.
 @example basics
 	{{:dokka.get('mocha', 'universal equals').code()}}
 **/
-export func equals(itemA!?, itemB!?) { // {{{
-	if itemA == itemB {
-		return true
-	}
-	else if itemA == null || itemB == null {
-		return false
-	}
-	else if itemA is Array {
-		return itemA.equals(itemB)
-	}
-	else if itemA is Object {
-		return Object.equals(itemA, itemB)
-	}
-	else {
-		return false
-	}
-} // }}}
+func equals(itemA: Array, itemB: Array) => itemA.equals(itemB)
+func equals(itemA: Date, itemB: Date) => itemA.equals(itemB)
+func equals(itemA: Dictionary, itemB: Dictionary) => Dictionary.equals(itemA, itemB)
+func equals(itemA: Object, itemB: Object) => Object.equals(itemA, itemB)
+func equals(itemA: RegExp, itemB: RegExp) => itemA.equals(itemB)
+func equals(itemA?, itemB?) => itemA == itemB
+
+export equals

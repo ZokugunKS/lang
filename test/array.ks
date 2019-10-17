@@ -3,6 +3,7 @@
 extern {
 	describe:	func
 	it:			func
+	console
 }
 
 import {
@@ -197,9 +198,7 @@ describe('array', func() {
 		}) // }}}
 
 		it('group', func() { // {{{
-			expect([1, 2, 3, 4].group(func(item, index) {
-					return item % 2 ? 'odd' : 'even'
-			})).to.eql({
+			expect([1, 2, 3, 4].group((item, index) => item % 2 != 0 ? 'odd' : 'even')).to.eql({
 				even: [2, 4],
 				odd: [1, 3]
 			})
@@ -411,16 +410,16 @@ describe('array', func() {
 		it('random :3', func() { // {{{
 			let count = 0
 
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
-			[1, 2, 3].random() == [1, 2, 3].random() && ++count
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
+			[1, 2, 3].random() == [1, 2, 3].random() && ++count != 0
 
 			expect(count).to.not.equal(10)
 		}) // }}}
@@ -536,9 +535,7 @@ describe('array', func() {
 				name: 'john'
 			}, {
 				name: 'white'
-			}].uniq(true, func(item, index) {
-				return item.name
-			})).to.eql([{
+			}].uniq(true, (item, index) => item.name)).to.eql([{
 				name: 'john'
 			}, {
 				name: 'white'
@@ -577,8 +574,8 @@ describe('array', func() {
 			expect(args is Array).to.be.true
 		}) // }}}
 
-		it('from :undef', func() { // {{{
-			let args = Array.from()
+		it('from :null', func() { // {{{
+			let args = Array.from(null)
 
 			expect(args is Array).to.be.true
 			expect(args.length).to.equal(0)

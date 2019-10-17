@@ -28,8 +28,8 @@ impl Array {
 			if value is Array {
 				return false unless item[index] is Array && value:Array.equals(item[index])
 			}
-			else if value is Object {
-				return false unless item[index] is Object && Object.equals(value, item[index])
+			else if value is Dictionary {
+				return false unless item[index] is Dictionary && Dictionary.equals(value, item[index])
 			}
 			else {
 				return false

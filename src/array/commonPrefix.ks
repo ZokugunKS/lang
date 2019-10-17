@@ -1,14 +1,12 @@
 include '../inc/array'
 
-extern console
-
 impl Array<String> {
 	/**[md.zot]**api**
 	Returns the common prefix for the given *array*.
-	
+
 	@function commonPrefix
 	@return {string}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array string commonPrefix :many:first').code()}}
 	**/
@@ -23,16 +21,16 @@ impl Array<String> {
 		else {
 			let i, c, k
 			let last = -1
-			
+
 			do {
 				++last
 				k = null
-				
+
 				for i from 0 til l {
 					if (c = this[i].charAt(last)).length == 0 {
 						break
 					}
-					
+
 					if k == null {
 						k = c
 					}
@@ -42,7 +40,7 @@ impl Array<String> {
 				}
 			}
 			while i == l
-			
+
 			return this[0].slice(0, last)
 		}
 	} // }}}

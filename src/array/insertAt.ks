@@ -3,12 +3,12 @@ include '../inc/array'
 impl Array {
 	/**[md.zot]**api**
 	Insert a value at the given *index*.
-	
+
 	@function insertAt
 	@param	{number}	index	The index to insert at
 	@param	{any}		'...		The value to insert'
 	@return {this}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'array instance insertAt :3:1:1').code()}}
 	**/
@@ -19,9 +19,9 @@ impl Array {
 			}
 			while index < 0
 		}
-		
+
 		if args.length > 1 {
-			if index {
+			if index != 0 {
 				if index >= this.length {
 					this.push(...args)
 				}
@@ -34,7 +34,7 @@ impl Array {
 			}
 		}
 		else {
-			if index {
+			if index != 0 {
 				if index >= this.length {
 					this.push(args[0])
 				}
@@ -46,7 +46,7 @@ impl Array {
 				this.unshift(args[0])
 			}
 		}
-		
+
 		return this
 	}
 }

@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns an object with all the *object*'s properties validating the function *fn*.
 
@@ -14,12 +14,11 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object filter').code()}}
 	**/
-	static filter(item, fn, bind = null): Object {
-		let results = {}
-		let value
+	static filter(item: Dictionary, fn: Function, bind = null): Dictionary {
+		const results = {}
 
-		for const :key of item {
-			if item.hasOwnProperty(key) && fn*$(bind, value = item[key], key, item) {
+		for const value, key of item {
+			if fn*$(bind, value, key, item) {
 				results[key] = value
 			}
 		}

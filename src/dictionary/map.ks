@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns an object with every *object*'s properties transformed by the function *fn*.
 
@@ -14,13 +14,11 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object map').code()}}
 	**/
-	static map(item, fn, bind = null): Object {
-		let results = {}
+	static map(item: Dictionary, fn: Function, bind = null): Dictionary {
+		const results = {}
 
 		for const :key of item {
-			if item.hasOwnProperty(key) {
-				results[key] = fn*$(bind, item[key], key, item)
-			}
+			results[key] = fn*$(bind, item[key], key, item)
 		}
 
 		return results

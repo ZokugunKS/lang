@@ -19,6 +19,6 @@ ktest:
 	npx karma start karma.conf-debug.js
 
 clean:
-	npx kaoscript --clean
+	./node_modules/.bin/kaoscript --clean
 
 .PHONY: test coverage

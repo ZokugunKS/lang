@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Return *true* if all the *object*'s properties validate the function *fn*, *false* if not.
 
@@ -14,9 +14,9 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object every').code()}}
 	**/
-	static every(item, fn, bind = null): Boolean {
+	static every(item: Dictionary, fn: Function, bind = null): Boolean {
 		for const :key of item {
-			if item.hasOwnProperty(key) && !fn*$(bind, item[key], key) {
+			if !fn*$(bind, item[key], key) {
 				return false
 			}
 		}

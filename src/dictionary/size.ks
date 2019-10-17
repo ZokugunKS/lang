@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns the number of properties in the *object*;
 
@@ -12,13 +12,11 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object size').code()}}
 	**/
-	static size(item: Object): Number {
+	static size(item: Dictionary): Number {
 		let count = 0
 
 		for const :key of item {
-			if item.hasOwnProperty(key) {
-				++count
-			}
+			++count
 		}
 
 		return count

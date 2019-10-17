@@ -1,6 +1,6 @@
 include '../inc/string'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns *object* after copying into all the values of the arguments.
 
@@ -13,13 +13,14 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object append :default').code()}}
 	**/
-	static append(item, ...args): Object {
-		let arg, key
+	static append(item: Dictionary, ...args): Dictionary {
 		for const i from 0 til args.length {
-			arg = args[i] ?? {}
+			const arg = args[i] ?? {}
 
-			for :key of arg {
-				item[key] = arg[key]
+			if arg is Dictionary {
+				for const :key of arg {
+					item[key] = arg[key]
+				}
 			}
 		}
 

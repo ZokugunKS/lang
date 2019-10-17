@@ -3,15 +3,15 @@ include '../inc/number'
 impl Number {
 	/**[md.zot]**api**
 	Modulate the number.
-	
+
 	@function mod
 	@param	{number}	max	The maximum number
 	@return {number}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'number instance mod').code()}}
 	**/
-	mod(max): Number {
+	mod(max: Number): Number {
 		if isNaN(this) {
 			return 0
 		}

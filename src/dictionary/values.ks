@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns an array containing all the values of the *object*.
 
@@ -12,5 +12,5 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object values').code()}}
 	**/
-	static values(item): Array => [item[key] for const :key of item when item.hasOwnProperty(key)]
+	static values(item: Dictionary): Array => [value for const value of item]
 }

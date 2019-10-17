@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns the key a the given *index*
 
@@ -15,8 +15,9 @@ impl Object {
 	**/
 	static keyAt(item, index): String? {
 		let i = -1
+
 		for const :key of item {
-			if item.hasOwnProperty(key) && ++i == index {
+			if ++i == index {
 				return key
 			}
 		}

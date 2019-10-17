@@ -1,11 +1,11 @@
 require|extern sealed class Function
 
 disclose Function {
-	caller: Object
+	caller: Any
 	length: Number
-	apply(thisArg: Object, arguments: Array)
-	bind(thisArg: Object, ...arguments): Function
-	call(thisArg: Object, ...arguments)
+	apply(thisArg: Dictionary, arguments: Array)
+	bind(thisArg: Dictionary, ...arguments): Function
+	call(thisArg: Dictionary, ...arguments)
 	toString(): String
 }
 

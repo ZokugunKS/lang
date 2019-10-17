@@ -3,36 +3,36 @@ include '../inc/json'
 func $path(value, seen, keys) { // {{{
 	let index = seen.indexOf(value)
 	let path = [keys[index]]
-	
+
 	while --index >= 0 {
-		if seen[index] && seen[index][path[0]] == value {
+		if seen[index]?[path[0]] == value {
 			value = seen[index]
 			path.unshift(keys[index])
 		}
 	}
-	
+
 	return '~' + path.join('.')
 } // }}}
-	
-func $replacer(replacer = null, decycle = null) { // {{{
-	let seen = []
-	let keys = []
-	
+
+func $replacer(replacer?, decycle?) { // {{{
+	const seen = []
+	const keys = []
+
 	decycle ??= (key, value) => '[Circular ' + $path(value, seen, keys) + ']'
-	
-	if replacer? {
+
+	if replacer != null {
 		return func(key, value?) {
 			let index
 			if value == null {
 				return null
 			}
-			else if value is Object && (index = seen.indexOf(value)) != -1 {
+			else if value is not Primitive && (index = seen.indexOf(value)) != -1 {
 				return replacer(key, decycle(key, value))
 			}
 			else {
 				seen.push(value)
 				keys.push(key)
-				
+
 				return replacer(key, value)
 			}
 		}
@@ -43,13 +43,13 @@ func $replacer(replacer = null, decycle = null) { // {{{
 			if value == null {
 				return null
 			}
-			else if value is Object && (index = seen.indexOf(value)) != -1 {
+			else if value is not Primitive && (index = seen.indexOf(value)) != -1 {
 				return decycle(key, value)
 			}
 			else {
 				seen.push(value)
 				keys.push(key)
-				
+
 				return value
 			}
 		}
@@ -59,7 +59,7 @@ func $replacer(replacer = null, decycle = null) { // {{{
 impl JSON {
 	/**[md.zot]**api**
 	Returns a JSON string without circular references.
-	
+
 	@function stringifySafely
 	@param	{any}					item			The object to serialize
 	@param	{function(key, value)}	[replacer]		Generate the object representation
@@ -67,7 +67,7 @@ impl JSON {
 	@param	{function(key, value)}	[decycle]		How to generate the circular references
 	@return {string}
 	@static
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'json stringifySafely :default').code()}}
 	**/

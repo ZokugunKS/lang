@@ -1,6 +1,7 @@
 include {
 	'./array/_toSource'
 	'./function/_toSource'
+	'./dictionary/_toSource'
 	'./object/_toSource'
 
 	'./string/replaceAll'
@@ -17,26 +18,23 @@ Returns the representation of the given *value* as javascript source.
 @example basics
 	{{:dokka.get('mocha', 'universal toSource').code()}}
 **/
-export func toSource(value?): String { // {{{
+func toSource(value: Array): String => Array.toSource(value)
+func toSource(value: Dictionary): String => Dictionary.toSource(value)
+func toSource(value: Function): String => value.toSource()
+func toSource(value: Object): String => Object.toSource(value)
+func toSource(value?): String { // {{{
 	if value == null {
 		return 'null'
-	}
-	else if value is Array {
-		return Array.toSource(value)
-	}
-	else if value is Function {
-		return value.toSource()
-	}
-	else if value is Object {
-		return Object.toSource(value)
 	}
 	else if value is String {
 		return '\'' + value:String.replaceAll('\'', '\\\'').replaceAll('\n', '\\n').replaceAll('\r', '\\r').replaceAll('\t', '\\t') + '\''
 	}
-	else if value? {
+	else if value.toString is Function {
 		return value.toString()
 	}
 	else {
 		return ''
 	}
 } // }}}
+
+export toSource

@@ -1,6 +1,4 @@
-include {
-	'../inc/object'
-}
+include '../inc/object'
 
 impl Object {
 	/**[md.zot]**api**
@@ -14,10 +12,17 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object toSource').code()}}
 	**/
-	static toSource(item): String { // {{{
+	static toSource(value: Object): String { // {{{
+		if value.constructor.toSource is Function {
+			return value.constructor.toSource(value)
+		}
+		if value.constructor.prototype.toSource is Function {
+			return value.toSource()
+		}
+
 		let sources = []
 
-		for const value, key of item when item.hasOwnProperty(key) {
+		for const value, key of value when value.hasOwnProperty(key) {
 			sources.push('"' + key + '":' + toSource(value))
 		}
 

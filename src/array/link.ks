@@ -1,7 +1,7 @@
 include {
 	'../inc/array'
 
-	'../object/clone'
+	'../dictionary/clone'
 }
 
 impl Array {
@@ -15,13 +15,12 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance link').code()}}
 	**/
-	link(filters): Object {
-		let keys = Object.clone(filters)
-		let result = {}
+	link(filters): Dictionary {
+		const keys = Dictionary.clone(filters)
+		const result = {}
 
-		let key
 		for const i from 0 til this.length {
-			for :key of keys when keys[key](this[i]) {
+			for const :key of keys when keys[key](this[i]) {
 				result[key] = this[i]
 
 				delete keys[key]

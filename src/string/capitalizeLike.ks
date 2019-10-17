@@ -12,7 +12,7 @@ impl String {
 		{{:dokka.get('mocha', 'string instance capitalizeLike').code()}}
 	**/
 	capitalizeLike(pattern: String): String {
-		if pattern.match(/^[A-Z]/) {
+		if pattern.test(/^[A-Z]/) {
 			return this.charAt(0).toUpperCase() + this.slice(1)
 		}
 		else {

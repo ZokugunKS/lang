@@ -25,7 +25,7 @@ impl Array {
 		}
 
 		if args.length > 1 {
-			if index {
+			if index != 0 {
 				if index >= this.length {
 					for i from 0 til args.length {
 						this.push(...args[i])
@@ -49,7 +49,7 @@ impl Array {
 			}
 		}
 		else {
-			if index {
+			if index != 0 {
 				if index >= this.length {
 					this.push(...args[0])
 				}

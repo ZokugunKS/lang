@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns *true* if the *object* has any property, *false* if not.
 
@@ -12,12 +12,10 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object isEmpty').code()}}
 	**/
-	static isEmpty(item?): Boolean {
+	static isEmpty(item: Dictionary?): Boolean {
 		if item != null {
 			for const :key of item {
-				if item.hasOwnProperty(key) {
-					return false
-				}
+				return false
 			}
 		}
 

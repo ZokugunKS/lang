@@ -1,10 +1,10 @@
 include {
-	'../inc/object'
+	'../inc/dictionary'
 
 	'../array/intersection'
 }
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns *true* if any property validates the function *fn*, *false* if not.
 
@@ -18,9 +18,9 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object some').code()}}
 	**/
-	static some(item: Object, fn, bind = null): Boolean {
+	static some(item: Dictionary, fn: Function, bind = null): Boolean {
 		for const :key of item {
-			if item.hasOwnProperty(key) && fn*$(bind, item[key], key) {
+			if fn*$(bind, item[key], key) {
 				return true
 			}
 		}

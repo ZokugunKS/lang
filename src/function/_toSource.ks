@@ -1,6 +1,4 @@
-include {
-	'../inc/function'
-}
+include '../inc/function'
 
 const COMMENTS_REGEX = /((?:\/\/[^\r\n\\]*$)|(?:\/\*[^\\]*?\*\/))/mg
 const FUNCTION_REGEX = /^function\s*(?:\w*)\(([^\)]*)\)\s*([\s\S]+)$/m

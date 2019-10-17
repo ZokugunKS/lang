@@ -1,3 +1,1 @@
-include {
-	'../toSource'
-}
+include '../toSource'

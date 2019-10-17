@@ -440,12 +440,33 @@ describe('string', func() {
 		}) // }}}
 
 		it('toBoolean', func() { // {{{
-			expect('miss White'.toBoolean()).to.be.false
+			#![error(off)]
 
 			expect('true'.toBoolean()).to.be.true
 			expect('yes'.toBoolean()).to.be.true
 			expect('1'.toBoolean()).to.be.true
 			expect('on'.toBoolean()).to.be.true
+
+			expect('false'.toBoolean()).to.be.false
+			expect('no'.toBoolean()).to.be.false
+			expect('0'.toBoolean()).to.be.false
+			expect('off'.toBoolean()).to.be.false
+
+			expect(() => 'miss White'.toBoolean()).to.throw()
+		}) // }}}
+
+		it('toBooleanOrNull', func() { // {{{
+			expect('true'.toBooleanOrNull()).to.be.true
+			expect('yes'.toBooleanOrNull()).to.be.true
+			expect('1'.toBooleanOrNull()).to.be.true
+			expect('on'.toBooleanOrNull()).to.be.true
+
+			expect('false'.toBooleanOrNull()).to.be.false
+			expect('no'.toBooleanOrNull()).to.be.false
+			expect('0'.toBooleanOrNull()).to.be.false
+			expect('off'.toBooleanOrNull()).to.be.false
+
+			expect('miss White'.toBooleanOrNull()).to.equal(null)
 		}) // }}}
 
 		it('toFirstLowerCase', func() { // {{{
@@ -457,13 +478,35 @@ describe('string', func() {
 		}) // }}}
 
 		it('toFloat', func() { // {{{
+			#![error(off)]
+
 			expect('3.14'.toFloat()).to.equal(3.14)
+
+			expect(() => 'miss White'.toFloat()).to.throw()
+		}) // }}}
+
+		it('toFloatOrNull', func() { // {{{
+			expect('3.14'.toFloatOrNull()).to.equal(3.14)
+
+			expect('miss White'.toFloatOrNull()).to.equal(null)
 		}) // }}}
 
 		it('toInt', func() { // {{{
+			#![error(off)]
+
 			expect('3.14'.toInt()).to.equal(3)
 
 			expect('16'.toInt(16)).to.equal(22)
+
+			expect(() => 'miss White'.toInt()).to.throw()
+		}) // }}}
+
+		it('toIntOrNull', func() { // {{{
+			expect('3.14'.toIntOrNull()).to.equal(3)
+
+			expect('16'.toIntOrNull(16)).to.equal(22)
+
+			expect('miss White'.toIntOrNull()).to.equal(null)
 		}) // }}}
 
 		it('trim', func() { // {{{

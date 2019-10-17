@@ -1,6 +1,6 @@
-include '../inc/object'
+include '../inc/dictionary'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns the key containing the given *value*.
 
@@ -13,9 +13,9 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object keyOf').code()}}
 	**/
-	static keyOf(item, value): String? {
+	static keyOf(item: Dictionary, value): String? {
 		for const :key of item {
-			if item.hasOwnProperty(key) && item[key] == value {
+			if item[key] == value {
 				return key
 			}
 		}

@@ -1,6 +1,4 @@
-include {
-	'../inc/object'
-}
+include '../inc/object'
 
 impl Object {
 	/**[md.zot]**api**
@@ -16,15 +14,16 @@ impl Object {
 		{{:dokka.get('mocha', 'object equals :default').code()}}
 	**/
 	static equals(itemA?, itemB?): Boolean {
+		return false if itemA is not Object || itemB is not Object
 		return true if itemA == itemB
-		return false if itemA == null || itemB == null
 		return false if itemA.constructor != itemB.constructor
 
-		if itemA.constructor.equals {
+
+		if itemA.constructor.equals is Function {
 			return itemA.constructor.equals(itemA, itemB)
 		}
 
-		if itemA.constructor.prototype.equals {
+		if itemA.constructor.prototype.equals is Function {
 			return itemA.equals(itemB)
 		}
 

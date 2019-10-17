@@ -12,5 +12,5 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance contains').code()}}
 	**/
-	contains(value: String, separator: String = ''): Boolean => separator.length ? (separator + this + separator).indexOf(separator + value + separator) > -1 : this.indexOf(value) > -1
+	contains(value: String, separator: String = ''): Boolean => separator.length != 0 ? (separator + this + separator).indexOf(separator + value + separator) > -1 : this.indexOf(value) > -1
 }

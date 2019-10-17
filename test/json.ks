@@ -70,4 +70,41 @@ describe('json', func() {
 			return value is String ? value.toLowerCase() : value
 		})).to.equal('{"name":null,"root":"[circular ~]"}')
 	}) // }}}
+
+	it('stringifySafely :object:default', func() { // {{{
+		class Person {
+			private {
+				@honorific: String
+				@name: String
+			}
+			constructor(@name, @honorific)
+			print() => `\(@honorific) \(@name)`
+		}
+
+		const w = new Person('White', 'miss')
+
+		expect(JSON.stringifySafely(w)).to.equal('{"_name":"White","_honorific":"miss"}')
+	}) // }}}
+
+	it('stringifySafely :object:cycle', func() { // {{{
+		class Person {
+			private {
+				@honorific: String
+				@name: String
+				@spouse: Person?
+			}
+			constructor(@name, @honorific)
+			print() => `\(@honorific) \(@name)`
+			spouse() => @spouse
+			spouse(@spouse) => this
+		}
+
+		const w = new Person('White', 'madam')
+		const d = new Person('Doe', 'mister')
+
+		w.spouse(d)
+		d.spouse(w)
+
+		expect(JSON.stringifySafely([w, d])).to.equal('[{"_name":"White","_honorific":"madam","_spouse":{"_name":"Doe","_honorific":"mister","_spouse":"[Circular ~.0]"}},"[Circular ~.0._spouse]"]')
+	}) // }}}
 })

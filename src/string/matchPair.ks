@@ -3,25 +3,25 @@ include '../inc/string'
 impl String {
 	/**[md.zot]**api**
 	Returns the first expression opened with the matching pair *open* and *close*, like *(*, *)* or *[*, *]*.
-	
+
 	@function matchPair
 	@param	{string}	open		The string that opens an expression
 	@param	{string}	close		The string that closes an expression
 	@return {object}
-	
+
 	@example basics
 		{{:dokka.get('mocha', 'string instance matchPair :default').code()}}
 	**/
-	matchPair(open, close): Boolean | Object {
+	matchPair(open, close): Boolean | Dictionary {
 		let level = 0
 		let start = -1
-		
+
 		for i from 0 til this.length {
 			if this[i] == open {
 				if start == -1 {
 					start = i
 				}
-				
+
 				level++
 			}
 			else if this[i] == close {
@@ -36,7 +36,7 @@ impl String {
 				}
 			}
 		}
-		
+
 		return false
 	}
 }

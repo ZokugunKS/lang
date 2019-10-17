@@ -12,7 +12,7 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance indexOfRegex :default').code()}}
 	**/
-	indexOfRegex(pattern, from = 0): Number {
+	indexOfRegex(pattern, from: Number = 0): Number {
 		let index = this.substring(from).search(pattern)
 		return index >= 0 ? index + from : -1
 	}

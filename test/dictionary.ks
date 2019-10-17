@@ -10,9 +10,9 @@ import {
 	'..'
 }
 
-describe('object', func() {
+describe('dictionary', func() {
 	it('append :default', func() { // {{{
-		expect(Object.append({
+		expect(Dictionary.append({
 			name: 'White'
 		}, {
 			honorific: 'miss'
@@ -21,7 +21,7 @@ describe('object', func() {
 			honorific: 'miss'
 		})
 
-		expect(Object.append({
+		expect(Dictionary.append({
 			name: 'White'
 		}, {
 			honorific: 'mister'
@@ -34,7 +34,7 @@ describe('object', func() {
 	}) // }}}
 
 	it('append w/null', func() { // {{{
-		expect(Object.append({
+		expect(Dictionary.append({
 			name: 'White'
 		}, null, {
 			honorific: 'miss'
@@ -42,67 +42,6 @@ describe('object', func() {
 			name: 'White',
 			honorific: 'miss'
 		})
-	}) // }}}
-
-	it('clone :object', func() { // {{{
-		let o = {
-			name: 'White',
-			honorific: 'miss'
-		}
-
-		let c = Object.clone(o)
-
-		expect(c == o).to.be.false
-
-		expect(c).to.eql({
-			name: 'White',
-			honorific: 'miss'
-		})
-	}) // }}}
-
-	it('clone :class', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			static clone(value: Person) => new Person(value._name, value._honorific)
-		}
-
-		let o = new Person('White', 'miss')
-
-		expect(o._name).to.equal('White')
-		expect(o._honorific).to.equal('miss')
-
-		let c = Object.clone(o)
-
-		expect(c == o).to.be.false
-
-		expect(c._name).to.equal('White')
-		expect(c._honorific).to.equal('miss')
-	}) // }}}
-
-	it('clone :instance', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			clone() => new Person(this._name, this._honorific)
-		}
-
-		let o = new Person('White', 'miss')
-
-		let c = Object.clone(o)
-
-		expect(c == o).to.be.false
-
-		expect(JSON.stringify(c)).to.equal(JSON.stringify({
-			_name: 'White',
-			_honorific: 'miss'
-		}))
 	}) // }}}
 
 	it('copy', func() { // {{{
@@ -114,7 +53,7 @@ describe('object', func() {
 			}
 		}
 
-		let d = Object.copy(o)
+		let d = Dictionary.copy(o)
 
 		expect(o == d).to.be.false
 
@@ -135,7 +74,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		let d = Object.defaults(o, {
+		let d = Dictionary.defaults(o, {
 			color: 'yellow'
 		})
 
@@ -158,7 +97,7 @@ describe('object', func() {
 		}
 
 		let s = []
-		Object.each(o, func(value, key) {
+		Dictionary.each(o, func(value, key) {
 			s.push(key + ': ' + value)
 		})
 
@@ -171,12 +110,12 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.equals(o, {
+		expect(Dictionary.equals(o, {
 			name: 'White',
 			honorific: 'miss'
 		})).to.be.true
 
-		expect(Object.equals(o, {
+		expect(Dictionary.equals(o, {
 			name: 'White',
 			honorific: 'miss',
 			color: 'yellow'
@@ -189,7 +128,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.equals(o, o)).to.be.true
+		expect(Dictionary.equals(o, o)).to.be.true
 	}) // }}}
 
 	it('equals :null', func() { // {{{
@@ -198,83 +137,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.equals(o, null)).to.be.false
-	}) // }}}
-
-	it('equals :!constructor', func() { // {{{
-		let o = {
-			name: 'White',
-			honorific: 'miss'
-		}
-
-		expect(Object.equals(o, 'Hello')).to.be.false
-	}) // }}}
-
-	it('equals :class', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			static equals(itemA, itemB) => itemA._name == itemB._name && itemA._honorific == itemB._honorific
-		}
-
-		expect(Object.equals(new Person('White', 'miss'), new Person('White', 'miss'))).to.be.true
-	}) // }}}
-
-	it('equals :instance', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			equals(item) => this._name == item._name && this._honorific == item._honorific
-		}
-
-		expect(Object.equals(new Person('White', 'miss'), new Person('White', 'miss'))).to.be.true
-	}) // }}}
-
-	it('equals :member w/ownProperty', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			print() => this._honorific + ' ' + this._name
-		}
-
-		expect(Object.equals(new Person('White', 'miss'), new Person('White', 'miss'))).to.be.true
-	}) // }}}
-
-	it('equals :member wo/ownProperty', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(name, honorific = null) {
-				this._name = name
-				this._honorific = honorific if honorific != null
-			}
-		}
-
-		expect(Object.equals(new Person('White', 'miss'), new Person('White'))).to.be.false
-	}) // }}}
-
-	it('equals :member:ne', func() { // {{{
-		class Person {
-			private {
-				_honorific: String
-				_name: String
-			}
-			constructor(@name, @honorific)
-			print() => this._honorific + ' ' + this._name
-		}
-
-		expect(Object.equals(new Person('White', 'miss'), new Person('White', 'mister'))).to.be.false
+		expect(Dictionary.equals(o, null)).to.be.false
 	}) // }}}
 
 	it('every', func() { // {{{
@@ -283,11 +146,11 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.every(o, func(value, key) {
+		expect(Dictionary.every(o, func(value, key) {
 			return key == 'name' || key == 'honorific'
 		})).to.be.true
 
-		expect(Object.every(o, func(value, key) {
+		expect(Dictionary.every(o, func(value, key) {
 			return key == 'name'
 		})).to.be.false
 	}) // }}}
@@ -298,7 +161,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.filter(o, func(value, key) {
+		expect(Dictionary.filter(o, func(value, key) {
 			return key == 'name'
 		})).to.eql({
 			name: 'White'
@@ -311,8 +174,8 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.hasKey(o, 'name')).to.be.true
-		expect(Object.hasKey(o, 'nami')).to.be.false
+		expect(Dictionary.hasKey(o, 'name')).to.be.true
+		expect(Dictionary.hasKey(o, 'nami')).to.be.false
 	}) // }}}
 
 	it('hasValue', func() { // {{{
@@ -321,14 +184,14 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.hasValue(o, 'White')).to.be.true
-		expect(Object.hasValue(o, 'Black')).to.be.false
+		expect(Dictionary.hasValue(o, 'White')).to.be.true
+		expect(Dictionary.hasValue(o, 'Black')).to.be.false
 	}) // }}}
 
 	it('isEmpty', func() { // {{{
-		expect(Object.isEmpty({})).to.be.true
+		expect(Dictionary.isEmpty({})).to.be.true
 
-		expect(Object.isEmpty({
+		expect(Dictionary.isEmpty({
 			name: 'White'
 		})).to.be.false
 	}) // }}}
@@ -339,11 +202,11 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.keyAt(o, 0)).to.equal('name')
+		expect(Dictionary.keyAt(o, 0)).to.equal('name')
 
-		expect(Object.keyAt(o, 1)).to.equal('honorific')
+		expect(Dictionary.keyAt(o, 1)).to.equal('honorific')
 
-		expect(Object.keyAt(o, 2)).to.equal(null)
+		expect(Dictionary.keyAt(o, 2)).to.equal(null)
 	}) // }}}
 
 	it('keyOf', func() { // {{{
@@ -352,13 +215,13 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.keyOf(o, 'miss')).to.equal('honorific')
+		expect(Dictionary.keyOf(o, 'miss')).to.equal('honorific')
 
-		expect(Object.keyOf(o, 'mister')).to.equal(null)
+		expect(Dictionary.keyOf(o, 'mister')).to.equal(null)
 	}) // }}}
 
 	it('keys', func() { // {{{
-		expect(Object.keys({
+		expect(Dictionary.keys({
 			name: 'White',
 			honorific: 'miss'
 		})).to.eql(['name', 'honorific'])
@@ -370,7 +233,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.map(o, func(value) {
+		expect(Dictionary.map(o, func(value) {
 			return value.toUpperCase()
 		})).to.eql({
 			name: 'WHITE',
@@ -384,7 +247,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		let d = Object.merge(o, {
+		let d = Dictionary.merge(o, {
 			color: 'yellow'
 		})
 
@@ -403,7 +266,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		let d = Object.merge(o, {
+		let d = Dictionary.merge(o, {
 			colors: ['yellow', 'blue']
 		})
 
@@ -422,7 +285,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		let d = Object.merge(o, {
+		let d = Dictionary.merge(o, {
 			location: {
 				name: 'forest'
 			}
@@ -449,7 +312,7 @@ describe('object', func() {
 			}
 		}
 
-		let d = Object.merge(o, {
+		let d = Dictionary.merge(o, {
 			location: {
 				name: 'forest',
 				hello: 'world'
@@ -475,7 +338,7 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		let d = Object.merge(null, o, {
+		let d = Dictionary.merge(null, o, {
 			colors: ['yellow', 'blue']
 		}, {
 			location: {
@@ -496,7 +359,7 @@ describe('object', func() {
 	}) // }}}
 
 	it('size', func() { // {{{
-		expect(Object.size({
+		expect(Dictionary.size({
 			name: 'White',
 			honorific: 'miss'
 		})).to.equal(2)
@@ -508,11 +371,11 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.some(o, func(value, key) {
+		expect(Dictionary.some(o, func(value, key) {
 			return key == 'name'
 		})).to.be.true
 
-		expect(Object.some(o, func(value, key) {
+		expect(Dictionary.some(o, func(value, key) {
 			return key == 'color'
 		})).to.be.false
 	}) // }}}
@@ -523,13 +386,13 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.subset(o, ['name'])).to.eql({
+		expect(Dictionary.subset(o, ['name'])).to.eql({
 			name: 'White'
 		})
 	}) // }}}
 
 	it('toSource', func() { // {{{
-		expect(Object.toSource({
+		expect(Dictionary.toSource({
 			name: 'White',
 			honorific: 'miss'
 		})).to.equal('{"name":\'White\',"honorific":\'miss\'}')
@@ -541,15 +404,15 @@ describe('object', func() {
 			honorific: 'miss'
 		}
 
-		expect(Object.value(o, 0)).to.equal('White')
+		expect(Dictionary.value(o, 0)).to.equal('White')
 
-		expect(Object.value(o, 1)).to.equal('miss')
+		expect(Dictionary.value(o, 1)).to.equal('miss')
 
-		expect(Object.value(o, 2)).to.equal(null)
+		expect(Dictionary.value(o, 2)).to.equal(null)
 	}) // }}}
 
 	it('values', func() { // {{{
-		expect(Object.values({
+		expect(Dictionary.values({
 			name: 'White',
 			honorific: 'miss'
 		})).to.eql(['White', 'miss'])

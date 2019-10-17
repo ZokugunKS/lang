@@ -1,6 +1,6 @@
 include '../inc/string'
 
-impl Object {
+impl Dictionary {
 	/**[md.zot]**api**
 	Returns a shallow copy of the given object.
 
@@ -12,7 +12,7 @@ impl Object {
 	@example basics
 		{{:dokka.get('mocha', 'object copy').code()}}
 	**/
-	static copy(item): Object {
+	static copy(item: Dictionary): Dictionary {
 		let clone = {}
 
 		for const :key of item {
