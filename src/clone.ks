@@ -6,8 +6,6 @@ include {
 	'./regexp/_clone'
 }
 
-extern console
-
 /**[md.zot]**api**
 Returns the clone of the given *value*.
 

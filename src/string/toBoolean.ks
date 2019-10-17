@@ -10,12 +10,12 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance toBoolean').code()}}
 	**/
-	toBoolean(): Boolean ~ SyntaxError {
+	toBoolean(): Boolean ~ ParseError {
 		if const value = this.toBooleanOrNull() {
 			return value
 		}
 		else {
-			throw new SyntaxError(`The string "\(this)" can't be parsed to a boolean`)
+			throw new ParseError(`The string "\(this)" can't be parsed to a boolean`)
 		}
 	}
 }

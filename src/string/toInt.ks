@@ -14,11 +14,11 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance toInt').code()}}
 	**/
-	toInt(base: Number = 10): Number ~ SyntaxError {
+	toInt(base: Number = 10): Number ~ ParseError {
 		const value = parseInt(this, base)
 
 		if value == NaN {
-			throw new SyntaxError(`The string "\(this)" can't be parsed to an int`)
+			throw new ParseError(`The string "\(this)" can't be parsed to an int`)
 		}
 		else {
 			return value

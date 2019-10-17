@@ -13,11 +13,11 @@ impl String {
 	@example basics
 		{{:dokka.get('mocha', 'string instance toFloat').code()}}
 	**/
-	toFloat(): Number ~ SyntaxError {
+	toFloat(): Number ~ ParseError {
 		const value = parseFloat(this)
 
 		if value == NaN {
-			throw new SyntaxError(`The string "\(this)" can't be parsed to a float`)
+			throw new ParseError(`The string "\(this)" can't be parsed to a float`)
 		}
 		else {
 			return value

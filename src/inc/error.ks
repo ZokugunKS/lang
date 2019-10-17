@@ -12,4 +12,8 @@ require|extern {
 	sealed class TypeError extends Error
 }
 
-export Error, ReferenceError, SyntaxError, TypeError
+class ParseError extends Error {
+	override toString() => `ParseError: \(@message)`
+}
+
+export Error, ParseError, ReferenceError, SyntaxError, TypeError
