@@ -14,7 +14,7 @@ impl Dictionary {
 		{{:dokka.get('mocha', 'object each').code()}}
 	**/
 	static each(item: Dictionary, fn: Function, bind = null) {
-		for const :key of item {
+		for const _, key of item {
 			fn*$(bind, item[key], key, item)
 		}
 	}

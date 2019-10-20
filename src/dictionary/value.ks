@@ -16,7 +16,7 @@ impl Dictionary {
 	static value(item, index) {
 		let  i = -1
 
-		for const :key of item {
+		for const _, key of item {
 			if ++i == index {
 				return item[key]
 			}

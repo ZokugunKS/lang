@@ -18,7 +18,7 @@ impl Dictionary {
 			const arg = args[i] ?? {}
 
 			if arg is Dictionary {
-				for const :key of arg {
+				for const _, key of arg {
 					item[key] = arg[key]
 				}
 			}

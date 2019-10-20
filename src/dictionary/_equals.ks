@@ -20,13 +20,13 @@ impl Dictionary {
 		return false if itemA == null || itemB == null
 
 		let count = 0
-		for const :key of itemA {
+		for const _, key of itemA {
 			return false unless equals(itemA[key], itemB[key])
 
 			++count
 		}
 
-		for const :key of itemB {
+		for const _, key of itemB {
 			--count
 		}
 

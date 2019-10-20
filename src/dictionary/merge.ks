@@ -27,7 +27,7 @@ const $merge = {
 		return source
 	} // }}}
 	object(source, current) { // {{{
-		for const :key of current {
+		for const _, key of current {
 			if source[key] {
 				$merge.merge(source, key, current[key])
 			}
@@ -62,7 +62,7 @@ impl Dictionary {
 
 		while ++i < l {
 			if args[i] is Dictionary {
-				for const :key of args[i] {
+				for const _, key of args[i] {
 					$merge.merge(source, key, args[i][key])
 				}
 			}

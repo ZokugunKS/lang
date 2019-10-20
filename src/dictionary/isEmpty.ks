@@ -14,7 +14,7 @@ impl Dictionary {
 	**/
 	static isEmpty(item: Dictionary?): Boolean {
 		if item != null {
-			for const :key of item {
+			for const _, key of item {
 				return false
 			}
 		}

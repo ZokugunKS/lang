@@ -38,7 +38,7 @@
 		"coveralls": "^3.0.7",
 		"istanbul": "^0.4.5",
 		"kaoscript": "github:kaoscript/kaoscript",
-		"karma": "^4.4.0",
+		"karma": "^4.4.1",
 		"karma-chai": "^0.1.0",
 		"karma-chrome-launcher": "^2.2.0",
 		"karma-firefox-launcher": "^1.2.0",

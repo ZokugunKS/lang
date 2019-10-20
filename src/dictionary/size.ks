@@ -15,7 +15,7 @@ impl Dictionary {
 	static size(item: Dictionary): Number {
 		let count = 0
 
-		for const :key of item {
+		for const _, key of item {
 			++count
 		}
 

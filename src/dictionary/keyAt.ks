@@ -16,7 +16,7 @@ impl Dictionary {
 	static keyAt(item, index): String? {
 		let i = -1
 
-		for const :key of item {
+		for const _, key of item {
 			if ++i == index {
 				return key
 			}

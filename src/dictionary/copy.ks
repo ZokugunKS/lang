@@ -15,7 +15,7 @@ impl Dictionary {
 	static copy(item: Dictionary): Dictionary {
 		let clone = {}
 
-		for const :key of item {
+		for const _, key of item {
 			clone[key] = item[key]
 		}
 

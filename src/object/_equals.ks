@@ -28,14 +28,14 @@ impl Object {
 		}
 
 		let count = 0
-		for const :key of itemA when itemA.hasOwnProperty(key) {
+		for const _, key of itemA when itemA.hasOwnProperty(key) {
 			return false unless itemB.hasOwnProperty(key)
 			return false unless equals(itemA[key], itemB[key])
 
 			++count
 		}
 
-		for const :key of itemB when itemB.hasOwnProperty(key) {
+		for const _, key of itemB when itemB.hasOwnProperty(key) {
 			--count
 		}
 

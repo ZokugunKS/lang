@@ -20,7 +20,7 @@ impl Array {
 		const result = {}
 
 		for const i from 0 til this.length {
-			for const :key of keys when keys[key](this[i]) {
+			for const _, key of keys when keys[key](this[i]) {
 				result[key] = this[i]
 
 				delete keys[key]

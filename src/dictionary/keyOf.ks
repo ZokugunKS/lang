@@ -14,7 +14,7 @@ impl Dictionary {
 		{{:dokka.get('mocha', 'object keyOf').code()}}
 	**/
 	static keyOf(item: Dictionary, value): String? {
-		for const :key of item {
+		for const _, key of item {
 			if item[key] == value {
 				return key
 			}

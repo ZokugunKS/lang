@@ -19,7 +19,7 @@ impl Dictionary {
 		{{:dokka.get('mocha', 'object some').code()}}
 	**/
 	static some(item: Dictionary, fn: Function, bind = null): Boolean {
-		for const :key of item {
+		for const _, key of item {
 			if fn*$(bind, item[key], key) {
 				return true
 			}

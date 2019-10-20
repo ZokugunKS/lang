@@ -17,7 +17,7 @@ impl Dictionary {
 	static map(item: Dictionary, fn: Function, bind = null): Dictionary {
 		const results = {}
 
-		for const :key of item {
+		for const _, key of item {
 			results[key] = fn*$(bind, item[key], key, item)
 		}
 

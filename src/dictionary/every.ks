@@ -15,7 +15,7 @@ impl Dictionary {
 		{{:dokka.get('mocha', 'object every').code()}}
 	**/
 	static every(item: Dictionary, fn: Function, bind = null): Boolean {
-		for const :key of item {
+		for const _, key of item {
 			if !fn*$(bind, item[key], key) {
 				return false
 			}
