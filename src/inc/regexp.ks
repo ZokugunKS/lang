@@ -10,7 +10,7 @@ disclose RegExp {
 	global: Boolean
 	ignoreCase: Boolean
 	multiline: Boolean
-	exec(str: String): RegExpExecArray?
+	exec(str: String, index: Number = 0): RegExpExecArray?
 	test(str: String): Boolean
 	toString(): String
 }

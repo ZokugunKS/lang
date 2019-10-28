@@ -113,4 +113,15 @@ describe('equals', func() {
 		expect(equals(a, b)).to.be.true
 		expect(equals(a, c)).to.be.false
 	}) // }}}
+
+	it('regex', func() { // {{{
+		const a = /foobar/ig
+		const b = /foobar/ig
+		const c = /foobar/g
+		const d = /quxbaz/ig
+
+		expect(equals(a, b)).to.be.true
+		expect(equals(a, c)).to.be.false
+		expect(equals(a, d)).to.be.false
+	}) // }}}
 })

@@ -1,4 +1,6 @@
-include '../inc/date'
+include './getEpochTime'
+
+extern console
 
 impl Date {
 	static equals(itemA?, itemB?): Boolean { // {{{
@@ -6,7 +8,7 @@ impl Date {
 			return false
 		}
 		else {
-			return itemA.getTime() == itemB.getTime()
+			return itemA.getEpochTime() == itemB.getEpochTime()
 		}
 	} // }}}
 
@@ -15,7 +17,7 @@ impl Date {
 			return false
 		}
 		else {
-			return this.getTime() == itemB.getTime()
+			return this.getEpochTime() == itemB.getEpochTime()
 		}
 	} // }}}
 }
