@@ -20,7 +20,7 @@ impl String {
 			return this.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n')
 		}
 		else {
-			return (this.match(/[^\r\n]+/g) ?? [])!!
+			return this.match(/[^\r\n]+/g) ?? []
 		}
 	}
 }
