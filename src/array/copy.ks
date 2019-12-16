@@ -12,7 +12,7 @@ impl Array {
 		{{:dokka.get('mocha', 'array instance copy').code()}}
 	**/
 	copy(): Array {
-		let i := this.length
+		auto i = this.length
 		const clone = new Array(i)
 
 		while --i >= 0 {

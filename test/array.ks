@@ -134,7 +134,7 @@ describe('array', func() {
 		}) // }}}
 
 		it('equals :this', func() { // {{{
-			let a := [1, 2, 3]
+			const a = [1, 2, 3]
 			expect(a.equals(a)).to.be.true
 		}) // }}}
 
