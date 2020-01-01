@@ -1,6 +1,6 @@
 include './regexp'
 
-require|extern sealed class String
+require|extern systemic class String
 
 disclose String {
 	length: Number

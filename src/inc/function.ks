@@ -1,4 +1,4 @@
-require|extern sealed class Function
+require|extern systemic class Function
 
 disclose Function {
 	caller: Any

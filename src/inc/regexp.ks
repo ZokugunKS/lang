@@ -1,4 +1,4 @@
-require|extern sealed class RegExp
+require|extern systemic class RegExp
 
 type RegExpExecArray = Array<String?> & {
     index: Number

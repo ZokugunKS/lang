@@ -1,3 +1,3 @@
-require|extern sealed class Date
+require|extern systemic class Date
 
 export Date

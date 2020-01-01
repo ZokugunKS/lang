@@ -1,4 +1,4 @@
-require|extern sealed class Array
+require|extern systemic class Array
 
 disclose Array {
 	length: Number

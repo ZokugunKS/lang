@@ -1,4 +1,4 @@
-require|extern sealed class Boolean
+require|extern systemic class Boolean
 
 disclose Boolean {
 	toString(): String

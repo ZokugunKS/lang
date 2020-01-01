@@ -1,4 +1,4 @@
-require|extern sealed class Error
+require|extern systemic class Error
 
 disclose Error {
 	message: String
@@ -7,9 +7,9 @@ disclose Error {
 }
 
 require|extern {
-	sealed class ReferenceError extends Error
-	sealed class SyntaxError extends Error
-	sealed class TypeError extends Error
+	systemic class ReferenceError extends Error
+	systemic class SyntaxError extends Error
+	systemic class TypeError extends Error
 }
 
 class ParseError extends Error {

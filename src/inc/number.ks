@@ -1,4 +1,4 @@
-require|extern sealed class Number
+require|extern systemic class Number
 
 disclose Number {
 	static MAX_VALUE: Number

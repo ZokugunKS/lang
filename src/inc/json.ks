@@ -1,4 +1,4 @@
-require|extern sealed namespace JSON
+require|extern systemic namespace JSON
 
 disclose JSON {
 	static parse(text: String, reviver: Function = null): Any

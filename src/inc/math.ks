@@ -1,4 +1,4 @@
-require|extern sealed namespace Math
+require|extern systemic namespace Math
 
 disclose Math {
 	E: Number
