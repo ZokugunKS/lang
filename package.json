@@ -27,7 +27,7 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@kaoscript/coverage-istanbul": "^0.2.1",
+		"@kaoscript/coverage-istanbul": "github:kaoscript/coverage-istanbul",
 		"@kaoscript/target-commons": "^0.2.0",
 		"@kaoscript/webpack-loader": "^0.3.0",
 		"@mocha/karma-sauce-launcher": "^2.1.0",

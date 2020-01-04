@@ -84,6 +84,7 @@ include {
 
 	'./src/date/getEpochTime'
 	'./src/date/setEpochTime'
+	'./src/date/setTime'
 
 	'./src/dictionary/append'
 	'./src/dictionary/defaults'

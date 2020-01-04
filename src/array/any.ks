@@ -13,14 +13,14 @@ impl Array {
 	@example basics
 		{{:dokka.get('mocha', 'array instance any').code()}}
 	**/
-	any(fn): Boolean {
+	any(fn: Function): Boolean {
 		for item, index in this {
 			return true if fn(item, index, this)
 		}
 
 		return false
 	}
-	any(fn, bind): Boolean {
+	any(fn: Function, bind: Object): Boolean {
 		for item, index in this {
 			return true if fn*$(bind, item, index, this)
 		}
