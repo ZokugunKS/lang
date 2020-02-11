@@ -39,7 +39,7 @@ describe('clone', func() {
 
 	it('object :default', func() { // {{{
 		class Person {
-			private {
+			private lateinit {
 				_honorific: String
 				_name: String
 			}
